@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap');
+
+:root {
+	--dark: #1c191a;
+	--darkgrey: #303030;
+	--light: #f6e7d8;
+	--contrast-one: #07a5c3;
+	--contrast-two: #f14902;
+	--contrast-three: #f4b324;
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--dark);
+	font-family: 'Open Sans', sans-serif;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+input, button {
+	font-size: inherit;
+}
+input {
+	font-family: inherit;
+}
+button {
+	font-family: 'Archivo Black', sans-serif;
+	border: none;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+	padding-block-start: 0;
+	padding-inline-start: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Archivo Black', sans-serif;
+	text-transform: uppercase;
+}

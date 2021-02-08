@@ -1,0 +1,40 @@
+.ty-page {
+	justify-content: center;
+}
+.ty-header {
+	background-color: var(--contrast-three);
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.ty-header > *:not(button) {
+	padding: 1rem;
+}
+
+.ty-header p {
+	font-size: calc(1rem + 1vmin);
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.ty-header button {
+	background-color: var(--dark);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 24ch;
+}
+.ty-header button > * {
+	margin: 0.2rem 0.5rem;
+}
+.startagain {
+	font-size: calc(1rem + 1vmin);
+	white-space: break-spaces;
+	color: var(--light);
+}
+.ty-header svg {
+	width: calc(4rem + 3vmin);
+    height: auto;
+    fill: var(--light);
+}

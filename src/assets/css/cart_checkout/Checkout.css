@@ -1,0 +1,53 @@
+.checkout-page {
+	background-color: var(--contrast-one);
+}
+
+.checkout-header {
+	background-color: var(--dark);
+	color: var(--light);
+}
+.checkout-header .material-icons {
+	color: var(--contrast-three);
+}
+
+.checkout-container {
+	flex-grow: 1;
+	background-color: var(--dark);
+	color: var(--light);
+	margin: 2rem;
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	align-content: space-between;
+}
+.checkout-container > *:not(.checkout-container-header):not(button) {
+	border-bottom: 0.15rem solid var(--light);
+}
+
+/* CART ITEMS */
+
+.checkout-container .item {
+	border-bottom: none;
+	grid-template-columns: 1fr 1fr auto 1fr;
+	gap: 0.5rem
+}
+
+.summary-item {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-between;
+	text-transform: uppercase;
+	padding: 0.5rem;
+}
+
+.checkout-container .item-amount,
+.checkout-container .item-price,
+.checkout-container .summary-item-price {
+	color: var(--light);
+}
+
+.checkout-container button {
+	background-color: var(--contrast-two);
+}
+

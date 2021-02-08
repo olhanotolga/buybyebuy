@@ -1,0 +1,27 @@
+.not-found {
+	justify-content: center;
+}
+.not-found-header {
+	align-items: center;
+}
+.not-found-header h1 {
+	font-size: calc(4rem + 3vmin);
+	padding-bottom: 1rem;
+	border-bottom: 0.3rem solid var(--contrast-one);
+	color: var(--light);
+}
+
+.btns404 {
+	padding: 4rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.btns404 button {
+	width: 16ch;
+	background-color: var(--light);
+	color: var(--dark);
+	margin: 1rem;
+	cursor: pointer;
+}
