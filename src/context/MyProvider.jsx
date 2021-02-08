@@ -40,11 +40,11 @@ const MyProvider = (props) => {
 
 		switch (true) {
 			case currentNum.endsWith('000000000'):
-				return currentNum.replace('000000000', 'B');
+				return currentNum.replace(/000000000$/, 'B');
 			case currentNum.endsWith('000000'):
-				return currentNum.replace('000000', 'M');
+				return currentNum.replace(/000000$/, 'M');
 			case currentNum.endsWith('000'):
-				return currentNum.replace('000', 'K');
+				return currentNum.replace(/000$/, 'K');
 			default:
 				return Number(currentNum).toFixed(2);
 		}

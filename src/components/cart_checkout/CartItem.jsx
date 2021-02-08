@@ -37,18 +37,20 @@ const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 				{displayPrice(price)}&curren;
 			</span>
 
+			{addRemove && 
+				<span className="item-add material-icons"
+				onClick={() => addNewItem()}>add_circle_outline</span>
+			}
+
 			<span className='item-amount'>
 				<span className='times'>&times;</span>
 				{amount}
 			</span>
 			
 			{addRemove && 
-			<div className='item-add-remove'>
-				<span className="material-icons"
-				onClick={() => addNewItem()}>add_circle_outline</span>
-				<span className="material-icons"
+				<span className="item-remove material-icons"
 				onClick={() => removeItem()}>remove_circle_outline</span>
-			</div>}
+			}
 
 			<span className='item-sum'>
 				{displayPrice(amount * price)}&curren;
