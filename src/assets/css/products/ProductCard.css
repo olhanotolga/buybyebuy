@@ -45,5 +45,10 @@
 }
 .product-card-add-remove > * {
 	cursor: pointer;
+	transition: 0.3s;
 }
+.product-card-add-remove > *:active {
+	transform: scale3d(1.05, 1.05, 1.05);
+}
+
 

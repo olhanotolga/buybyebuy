@@ -15,7 +15,7 @@ const FetchData = () => {
 		}
 		fetchProducts();
 		
-	}, [])
+	}, [setProducts])
 
 	useEffect(() => {
 		// parse data fetched from the spreadsheet:

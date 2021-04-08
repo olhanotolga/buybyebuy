@@ -20,7 +20,7 @@ const Footer = ({className}) => {
 	useEffect(() => {
 		const currGreeting = displayGreeting(greetings);
 		setAddress(currGreeting);
-	}, [])
+	}, [displayGreeting, greetings])
 
 	return (
 		<footer className={className}>

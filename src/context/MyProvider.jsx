@@ -21,10 +21,6 @@ const MyProvider = (props) => {
 
 	// shopping cart
 	const [cart, setCart] = useState({});
-	/* {
-		'id1': { title: 'air', qty: 1, price: 124},
-		'id2': { title: 'air', qty: 1, price: 124}
-	} */
 	const [qty, setQty] = useState(0);
 	const [subtotal, setSubtotal] = useState(0);
 	const [shipping, setShipping] = useState(0);

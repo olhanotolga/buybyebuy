@@ -14,8 +14,8 @@
 	flex-grow: 1;
 	background-color: var(--dark);
 	color: var(--light);
-	margin: 2rem;
-	padding: 2rem;
+	margin: 2rem 1rem;
+	padding: 2rem 1rem;
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1rem;
@@ -51,3 +51,9 @@
 	background-color: var(--contrast-two);
 }
 
+@media screen and (min-width: 400px) {
+	.checkout-container {
+		margin: 2rem;
+		padding: 2rem;
+	}
+}
