@@ -1,16 +1,14 @@
-import React, {useState, useContext, useRef, useEffect} from 'react';
+import React, {useContext, useRef, useEffect, useReducer} from 'react';
 import {Redirect, useHistory} from 'react-router-dom';
 import Header from '../Header';
 import MyContext from '../../context/MyContext';
 import '../../assets/css/login_registration/LoginRegister.css';
+import { loginErrorReducer } from '../../reducers/loginErrorReducer';
 
 const Login = () => {
-	const history = useHistory();
-
-	const [loggedIn, setLoggedIn] = useState('');
-
 	const {users, userData, setUserData} = useContext(MyContext);
-
+	const [error, dispatchError] = useReducer(loginErrorReducer, '');
+	const history = useHistory();
 	const focusField = useRef();
 
 	useEffect(() => {
@@ -21,19 +19,24 @@ const Login = () => {
 		setUserData({...userData, [e.target.name]: e.target.value});
 	}
 
+	const handleInputError = (dispatcher) => {
+		dispatchError(dispatcher);
+		setUserData({username: '', password: ''});
+	}
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(users[userData.username]);
+		
 		if (users[userData.username] === userData.password) {
-			console.log('logged in!');
-			setLoggedIn('success');
+			dispatchError('DISPLAY_NULL');
+		} else if (userData.username === '' || userData.password === '') {
+			handleInputError('DISPLAY_EMPTY')
 		} else {
-			setUserData({username: '', password: ''});
-			setLoggedIn('failure');
+			handleInputError('DISPLAY_MISMATCH')
 		}
 	}
 	
-	if (loggedIn === 'success') {
+	if (!error && error !== '') {
 		return	<Redirect to={{
 			pathname: '/products'
 		}} />
@@ -42,11 +45,10 @@ const Login = () => {
 	return (
 		<main className='login-page'>
 			<Header className='login-header' title='Have we met?' />
-
 			
 			<form className='login-form'
 			onSubmit={(e) => handleSubmit(e)}>
-				{loggedIn === 'failure' && <p className='failure-message'>Login failed. try again.</p>}
+				{error && <p className='failure-message'>{error}</p>}
 
 				<label htmlFor="usernameLogin">
 						Username
