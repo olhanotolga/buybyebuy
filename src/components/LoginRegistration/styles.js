@@ -34,7 +34,6 @@ export const StyledLoginPage = styled.main`
 			text-transform: uppercase;
 		}
 		button {
-			padding: 1rem 2rem;
 			background-color: var(--light);
 			color: var(--dark);
 		}
@@ -54,7 +53,7 @@ export const StyledLoginPage = styled.main`
 export const StyledRegistrationPage = styled(StyledLoginPage)`
 	background-color: var(--darkgrey);
 	
-	input {
+	form input {
 		background-color: var(--darkgrey);
 	}
 `;

@@ -1,6 +1,6 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import theme from './theme';
+import theme from './styles/theme';
 import Home from './components/Home';
 import Login from './components/LoginRegistration/Login';
 import Registration from './components/LoginRegistration/Registration';

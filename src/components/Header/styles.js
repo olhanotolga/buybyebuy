@@ -24,6 +24,13 @@ const StyledHeader = styled.header`
 		border: 0.15rem solid;
 		border-color: inherit;
     border-radius: 50%;
+
+		&:hover {
+			box-shadow: 0.07rem -0.03rem var(--contrast-one), -0.07rem 0.03rem var(--contrast-two);
+		}
+		&:active {
+			transform: scale3d(1.15, 1.15, 1.15);
+		}
 	}
 `
 

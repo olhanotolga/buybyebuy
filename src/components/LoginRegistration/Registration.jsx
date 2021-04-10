@@ -4,6 +4,7 @@ import Header from '../Header';
 import MyContext from '../../context/MyContext';
 import { signupErrorReducer } from '../../reducers/signupErrorReducer';
 import { StyledRegistrationPage } from './styles';
+import { Button } from '../../styles/globalStyles';
 
 
 const Registration = () => {
@@ -83,7 +84,7 @@ const Registration = () => {
 					placeholder='password again'
 					value={confirmPW}
 					onChange={(e) => setConfirmPW(e.target.value)}/>
-				<button>Sign up</button>
+				<Button>Sign up</Button>
 			</form>
 		</StyledRegistrationPage>
 	)

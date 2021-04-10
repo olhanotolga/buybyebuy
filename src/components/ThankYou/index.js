@@ -1,5 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
+import { Button } from '../../styles/globalStyles';
 import Header from '../Header';
 import ReplayIcon from '../ReplayIcon';
 import StyledTY from './styles';
@@ -12,11 +13,11 @@ const ThankYou = () => {
 			<Header
 				className='ty-header'
 				title='Thank you!'>
-				<p>You successfully passed a webshop simulation!</p>
-				<button onClick={() => history.push('/')}>
+				<p>You successfully completed a webshop simulation!</p>
+				<Button onClick={() => history.push('/')}>
 					<span className='startagain'>start again?</span>
 					<ReplayIcon />
-				</button>
+				</Button>
 			</Header>
 		</StyledTY>
 	)

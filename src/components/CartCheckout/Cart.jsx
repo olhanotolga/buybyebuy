@@ -6,6 +6,7 @@ import { StyledCart } from './styles';
 import { StyledCartItem } from './CartItem';
 import { StyledCartSummaryItem } from './SummaryItem';
 import MyContext from '../../context/MyContext';
+import { Button } from '../../styles/globalStyles';
 
 const Cart = () => {
 	const {cart, setSubtotal, subtotal, setQty, setShipping} = useContext(MyContext);
@@ -66,9 +67,9 @@ const Cart = () => {
 						title='subtotal:'
 						price={subtotal} />
 				</ul>
-				<button
+				<Button
 				onClick={() => history.push('/checkout')}
-				>Checkout</button>
+				>Checkout</Button>
 			</section>
 
 			<Footer />

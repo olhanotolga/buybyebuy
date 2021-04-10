@@ -94,19 +94,21 @@ export const StylesForCartItem = styled.li`
 		grid-column: -2 / -1;
 		justify-self: end;
 	}
+	.item-amount {
+		justify-self: center;
+	}
 
 	.material-icons {
 		color: var(--contrast-two);
+		cursor: pointer;
+		&:active {
+			transform: scale3d(1.15, 1.15, 1.15);
+		}
 	}
 
 	.item-amount,
 	.item-sum {
 		color: var(--contrast-three);
-	}
-
-	.item-add,
-	.item-remove {
-		cursor: pointer;
 	}
 
 	.times {

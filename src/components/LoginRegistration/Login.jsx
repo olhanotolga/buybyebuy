@@ -4,6 +4,7 @@ import Header from '../Header';
 import MyContext from '../../context/MyContext';
 import { StyledLoginPage } from './styles';
 import { loginErrorReducer } from '../../reducers/loginErrorReducer';
+import { Button } from '../../styles/globalStyles';
 
 const Login = () => {
 	const {users, userData, setUserData} = useContext(MyContext);
@@ -72,7 +73,7 @@ const Login = () => {
 					value={userData.password}
 					onChange={handleInputChange}
 					/>
-				<button>Log in</button>
+				<Button>Log in</Button>
 			</form>
 			<p onClick={() => history.push('/register') }>Or sign up</p>
 		</StyledLoginPage>

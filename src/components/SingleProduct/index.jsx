@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import {Link, useHistory} from 'react-router-dom';
 import MyContext from '../../context/MyContext';
 import StyledProductPage from './styles';
+import { Button } from '../../styles/globalStyles';
 
 const ProductDetails = () => {
 	const history = useHistory();
@@ -51,13 +52,13 @@ const ProductDetails = () => {
 					{description}
 				</p>
 				<div className='product-btns'>
-					<button className='back' onClick={() => history.goBack()}>Back</button>
-					<button
+					<Button className='back' onClick={() => history.goBack()}>Back</Button>
+					<Button
 					className='buy'
 					onClick={() => addNewItem()}>
 						<span>Buy</span> 
 						<span className='price'>{displayPrice(price)}&curren;</span>
-					</button>
+					</Button>
 				</div>
 			</section>
 			<Footer className='product-footer' />

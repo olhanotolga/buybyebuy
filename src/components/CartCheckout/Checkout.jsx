@@ -6,6 +6,7 @@ import MyContext from '../../context/MyContext';
 import { StyledCheckout } from './styles';
 import { StyledCheckoutItem } from './CartItem';
 import { StyledCheckoutSummaryItem } from './SummaryItem';
+import { Button } from '../../styles/globalStyles';
 
 const Checkout = () => {
 	const {cart, subtotal, shipping, total, displayPrice, setTotal, reset} = useContext(MyContext);
@@ -58,7 +59,7 @@ const Checkout = () => {
 						title='total:'
 						price={displayPrice(total)} />
 				</ul>
-				<button onClick={payAndExit}>Pay</button>
+				<Button onClick={payAndExit}>Pay</Button>
 			</section>
 			<Footer />
 		</StyledCheckout>
