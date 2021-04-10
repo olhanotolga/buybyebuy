@@ -2,10 +2,10 @@ import React, {useContext, useEffect} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
-import CartItem from './CartItem';
-import SummaryItem from './SummaryItem';
 import MyContext from '../../context/MyContext';
-import '../../assets/css/cart_checkout/Checkout.css';
+import { StyledCheckout } from './styles';
+import { StyledCheckoutItem } from './CartItem';
+import { StyledCheckoutSummaryItem } from './SummaryItem';
 
 const Checkout = () => {
 	const {cart, subtotal, shipping, total, displayPrice, setTotal, reset} = useContext(MyContext);
@@ -22,7 +22,7 @@ const Checkout = () => {
 	}
 
 	return (
-		<main>
+		<StyledCheckout>
 			<Header
 				className='checkout-header'
 				title='pay time'
@@ -35,7 +35,7 @@ const Checkout = () => {
 				<h3>Your order</h3>
 				<ul className='checkout-items'>
 					{cart && Object.entries(cart).map(item => {
-						return <CartItem key={item[0]}
+						return <StyledCheckoutItem key={item[0]}
 						className='item'
 						title={item[1].title}
 						amount={item[1].qty}
@@ -43,17 +43,17 @@ const Checkout = () => {
 					}) }
 				</ul>
 				<ul className='checkout-summary'>
-					<SummaryItem
+					<StyledCheckoutSummaryItem
 						className='summary-item'
 						title='subtotal:'
 						price={displayPrice(subtotal)} />
 
-					<SummaryItem
+					<StyledCheckoutSummaryItem
 						className='summary-item'
 						title='shipping:'
 						price={shipping} />
 
-					<SummaryItem
+					<StyledCheckoutSummaryItem
 						className='summary-item'
 						title='total:'
 						price={displayPrice(total)} />
@@ -61,7 +61,7 @@ const Checkout = () => {
 				<button onClick={payAndExit}>Pay</button>
 			</section>
 			<Footer />
-		</main>
+		</StyledCheckout>
 	)
 }
 

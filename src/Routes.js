@@ -6,8 +6,8 @@ import Login from './components/LoginRegistration/Login';
 import Registration from './components/LoginRegistration/Registration';
 import Products from './components/ProductsPage/Products';
 import ProductDetails from './components/SingleProduct/';
-import Cart from './components/cart_checkout/Cart';
-import Checkout from './components/cart_checkout/Checkout';
+import Cart from './components/CartCheckout/Cart';
+import Checkout from './components/CartCheckout/Checkout';
 import NotFound from './components/NotFound';
 import ThankYou from './components/ThankYou';
 

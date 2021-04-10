@@ -2,14 +2,14 @@
 
 ## TODOS
 
-- [ ] Style with Styled Components
+- [x] Style with Styled Components
+- [ ] Create styled button component
 - [ ] Refactor the Styled Components
 - [ ] Remove pointer cursor from logout when user is undefined
 - [ ] Make the cart icon clickable (not only the circled number)
 - [ ] A way to indicate that an item has been added to the cart
-- [ ] Remove log out icon when not logged in (replace with log in? Just restrict the route?)
 - [ ] Check how the states persist across the pages / on refresh
-- [ ] MORE ERRORS in Login/Registration;
+- [ ] MORE ERRORS in Login/Registration
 - [ ] Add protected routes / redirects
 - [ ] Check responsiveness
 - [ ] Add screenshots

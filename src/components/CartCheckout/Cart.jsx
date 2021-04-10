@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import Header from '../Header';
-import CartItem from './CartItem';
-import SummaryItem from './SummaryItem';
 import Footer from '../Footer';
 import { StyledCart } from './styles';
+import { StyledCartItem } from './CartItem';
+import { StyledCartSummaryItem } from './SummaryItem';
 import MyContext from '../../context/MyContext';
 
 const Cart = () => {
@@ -52,7 +52,7 @@ const Cart = () => {
 				</div>
 				<ul>
 					{cart && Object.entries(cart).map(item => {
-						return <CartItem key={item[0]}
+						return <StyledCartItem key={item[0]}
 						className='item'
 						title={item[1].title}
 						amount={item[1].qty}
@@ -61,7 +61,7 @@ const Cart = () => {
 						addRemove='true' />
 					}) }
 
-					<SummaryItem
+					<StyledCartSummaryItem
 						className='item subtotal'
 						title='subtotal:'
 						price={subtotal} />

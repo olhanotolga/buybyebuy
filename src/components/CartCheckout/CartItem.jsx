@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import MyContext from '../../context/MyContext';
-import {StyledCartItem} from './styles';
+import {StylesForCartItem, StylesForCheckoutItem} from './styles';
+
 
 const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 	const {cart, setCart, displayPrice} = useContext(MyContext);
-
 
 	const addNewItem = () => {
 		if (cart[idx]) {
@@ -29,7 +29,7 @@ const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 	}
 
 	return (
-		<StyledCartItem className={className}>
+		<>
 			<span className='item-title'>
 				{title}
 			</span>
@@ -57,7 +57,35 @@ const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 				{displayPrice(amount * price)}&curren;
 			</span>
 
-		</StyledCartItem>
+		</>
+	)
+}
+
+
+export const StyledCartItem = ({key, className, title, amount, price, idx, addRemove}) => {
+	return (
+		<StylesForCartItem>
+			<CartItem
+				className={className}
+				title={title}
+				amount={amount}
+				price={price}
+				idx={idx}
+				addRemove={addRemove}
+			/>
+		</StylesForCartItem>
+	)
+}
+
+export const StyledCheckoutItem = ({key, className, title, amount, price}) => {
+	return (
+		<StylesForCheckoutItem>
+			<CartItem
+				className={className}
+				title={title}
+				amount={amount}
+				price={price}/>
+		</StylesForCheckoutItem>
 	)
 }
 
