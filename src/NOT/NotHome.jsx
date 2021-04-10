@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import LoginIcon from './login_registration/LoginIcon';
-import Header from './Header';
+import LoginIcon from '../login_registration/LoginIcon';
+import Header from '../Header';
 import '../assets/css/Home.css';
 
 const Home = () => {

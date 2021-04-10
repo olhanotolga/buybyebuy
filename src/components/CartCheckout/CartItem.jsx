@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import MyContext from '../../context/MyContext';
+import {StyledCartItem} from './styles';
 
 const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 	const {cart, setCart, displayPrice} = useContext(MyContext);
@@ -28,7 +29,7 @@ const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 	}
 
 	return (
-		<li className={className}>
+		<StyledCartItem className={className}>
 			<span className='item-title'>
 				{title}
 			</span>
@@ -56,7 +57,7 @@ const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 				{displayPrice(amount * price)}&curren;
 			</span>
 
-		</li>
+		</StyledCartItem>
 	)
 }
 

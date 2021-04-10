@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import MyContext from '../../context/MyContext';
-import '../../assets/css/products/ProductCard.css';
+import { StyledProductCard } from './styles';
 
 const ProductCard = ({idx, title, info, price, image, description}) => {
 
@@ -34,7 +34,7 @@ const ProductCard = ({idx, title, info, price, image, description}) => {
 	}
 
 	return (
-		<section className='product-card'>
+		<StyledProductCard className='product-card'>
 			<img className='product-card-image' src={image} alt={title}/>
 			<h2 className='product-card-title'>{title}</h2>
 			<Link className='product-card-clickable' to={{
@@ -58,7 +58,7 @@ const ProductCard = ({idx, title, info, price, image, description}) => {
 					onClick={() => removeItem()}>
 						remove_circle_outline</span>
 			</div>
-		</section>
+		</StyledProductCard>
 	)
 }
 

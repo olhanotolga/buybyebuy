@@ -4,7 +4,7 @@ import Header from '../Header';
 import CartItem from './CartItem';
 import SummaryItem from './SummaryItem';
 import Footer from '../Footer';
-import '../../assets/css/cart_checkout/Cart.css';
+import { StyledCart } from './styles';
 import MyContext from '../../context/MyContext';
 
 const Cart = () => {
@@ -39,14 +39,14 @@ const Cart = () => {
 	
 
 	return (
-		<main className='cart-page'>
+		<StyledCart>
 			<Header
 				className='cart-header'
 				title='products'
 				icon='shopping_cart' />
 
 			<section className='cart-container'>
-				<div className='cart-container-header'>
+				<div>
 					<h2>Your cart</h2>
 					<Link className='link-back' to='/products'>Go Back</Link>
 				</div>
@@ -72,7 +72,7 @@ const Cart = () => {
 			</section>
 
 			<Footer />
-		</main>
+		</StyledCart>
 	)
 }
 

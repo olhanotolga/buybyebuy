@@ -22,13 +22,13 @@ const Checkout = () => {
 	}
 
 	return (
-		<main className='checkout-page'>
+		<main>
 			<Header
 				className='checkout-header'
 				title='pay time'
 				icon='point_of_sale' />
 			<section className="checkout-container">
-				<div className='checkout-container-header'>
+				<div>
 					<h2>Checkout</h2>
 					<Link className='link-back' to='/cart'>Go back</Link>
 				</div>

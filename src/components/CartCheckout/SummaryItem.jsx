@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import MyContext from '../../context/MyContext';
+import { StyledSummaryItem } from './styles';
 
 const SummaryItem = ({className, title, price}) => {
 

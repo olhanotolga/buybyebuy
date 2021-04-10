@@ -4,7 +4,7 @@ import MyContext from '../../context/MyContext';
 import ProductCard from './ProductCard';
 import Header from '../Header';
 import Footer from '../Footer';
-import '../../assets/css/products/Products.css';
+import { StyledProductsPage } from './styles';
 
 const Products = () => {
 
@@ -18,7 +18,7 @@ const Products = () => {
 	}, [cart, setQty])
 
 	return (
-		<main className='products-page'>
+		<StyledProductsPage className='products-page'>
 			<Header
 				className='products-header'
 				title='Products'
@@ -42,10 +42,9 @@ const Products = () => {
 						description={product.description}
 					/>
 				})}
-				
 			</section>
 			<Footer className='products-footer' />
-		</main>
+		</StyledProductsPage>
 	)
 }
 

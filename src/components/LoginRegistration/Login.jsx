@@ -2,7 +2,7 @@ import React, {useContext, useRef, useEffect, useReducer} from 'react';
 import {Redirect, useHistory} from 'react-router-dom';
 import Header from '../Header';
 import MyContext from '../../context/MyContext';
-import '../../assets/css/login_registration/LoginRegister.css';
+import { StyledLoginPage } from './styles';
 import { loginErrorReducer } from '../../reducers/loginErrorReducer';
 
 const Login = () => {
@@ -43,11 +43,10 @@ const Login = () => {
 	}
 
 	return (
-		<main className='login-page'>
+		<StyledLoginPage>
 			<Header className='login-header' title='Have we met?' />
 			
-			<form className='login-form'
-			onSubmit={(e) => handleSubmit(e)}>
+			<form onSubmit={(e) => handleSubmit(e)}>
 				{error && <p className='failure-message'>{error}</p>}
 
 				<label htmlFor="usernameLogin">
@@ -76,7 +75,7 @@ const Login = () => {
 				<button>Log in</button>
 			</form>
 			<p onClick={() => history.push('/register') }>Or sign up</p>
-		</main>
+		</StyledLoginPage>
 	)
 }
 

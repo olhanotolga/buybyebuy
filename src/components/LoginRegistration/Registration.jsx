@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom';
 import Header from '../Header';
 import MyContext from '../../context/MyContext';
 import { signupErrorReducer } from '../../reducers/signupErrorReducer';
+import { StyledRegistrationPage } from './styles';
 
 
 const Registration = () => {
@@ -43,7 +44,7 @@ const Registration = () => {
 	}
 
 	return (
-		<main className='registration-page'>
+		<StyledRegistrationPage>
 			<Header className='registration-header' title='Be a friend!' />
 			
 			<form className='registration-form'
@@ -84,7 +85,7 @@ const Registration = () => {
 					onChange={(e) => setConfirmPW(e.target.value)}/>
 				<button>Sign up</button>
 			</form>
-		</main>
+		</StyledRegistrationPage>
 	)
 }
 

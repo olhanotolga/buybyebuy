@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import {Link, useHistory} from 'react-router-dom';
-import '../../assets/css/products/ProductDetails.css';
 import MyContext from '../../context/MyContext';
+import StyledProductPage from './styles';
 
 const ProductDetails = () => {
 	const history = useHistory();
@@ -32,7 +32,7 @@ const ProductDetails = () => {
 	}, [cart, setQty])
 
 	return (
-		<main className='product-details-page'>
+		<StyledProductPage>
 			<Header
 				className='product-header'
 				title='Products'
@@ -61,7 +61,7 @@ const ProductDetails = () => {
 				</div>
 			</section>
 			<Footer className='product-footer' />
-		</main>
+		</StyledProductPage>
 	)
 }
 
