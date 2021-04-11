@@ -9,8 +9,8 @@
 - [x] Add pre-filled demo user data at login
 - [ ] Split Contexts
 - [x] Remove pointer cursor from logout when user is undefined
-- [ ] Add protected routes / redirects
-- [ ] Check how the states persist across the pages / on refresh
+- [x] Add protected routes / redirects
+- [x] Check how the states persist across the pages / on refresh
 - [ ] MORE ERRORS in Login/Registration
 - [ ] Check responsiveness
 - [ ] Add screenshots

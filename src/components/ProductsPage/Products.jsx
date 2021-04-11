@@ -8,8 +8,7 @@ import { StyledProductsPage } from './styles';
 
 const Products = () => {
 
-	const context = useContext(MyContext);
-	const {products, qty, setQty, cart} = context;
+	const {userData, products, qty, setQty, cart} = useContext(MyContext);
 
 	useEffect(() => {
 		setQty(
@@ -23,11 +22,13 @@ const Products = () => {
 				className='products-header'
 				title='Products'
 				icon='shopping_cart'>
-					<Link to={{
-						pathname: '/cart'
-					}}>
-					{qty}
-					</Link>
+					{userData.username !== '' &&
+						<Link to={{
+							pathname: '/cart'
+						}}>
+							{qty}
+						</Link>
+					}
 			</Header>
 
 			<section className='products-display'>

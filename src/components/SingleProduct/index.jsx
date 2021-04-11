@@ -55,11 +55,13 @@ const ProductDetails = (props) => {
 				className='product-header'
 				title='Products'
 				icon='shopping_cart'>
-					<Link to={{
-						pathname: '/cart'
-					}}>
-					{qty}
-					</Link>
+					{userData.username !== '' &&
+						<Link to={{
+							pathname: '/cart'
+						}}>
+							{qty}
+						</Link>
+					}
 				</Header>
 			
 			<section className='product-page-info'>
