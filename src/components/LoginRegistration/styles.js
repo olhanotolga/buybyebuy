@@ -62,6 +62,14 @@ export const StyledLoginPage = styled(PageMain)`
 
 export const StyledRegistrationPage = styled(StyledLoginPage)`
 	background-color: ${props => props.theme.colors.darkgrey};
+
+	header {
+		margin-bottom: 0;
+	}
+
+	form {
+		margin: auto;
+	}
 	
 	form input {
 		background-color: ${props => props.theme.colors.darkgrey};
