@@ -12,7 +12,7 @@ const Footer = ({className}) => {
 	const history = useHistory();
 
 	const logOut = () => {
-		if (userData.username) {
+		if (userData.username !== '') {
 			reset();
 			history.push('/login');
 		}
@@ -24,7 +24,9 @@ const Footer = ({className}) => {
 	}, [displayGreeting, greetings])
 
 	return (
-		<StyledFooter className={className}>
+		<StyledFooter 
+		isLoggedIn={userData.username !== '' ? true : false}
+		className={className}>
 			<span>{userData.username ? address + userData.username : 'not logged in'}</span>
 			<span
 				onClick={logOut}

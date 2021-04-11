@@ -5,16 +5,17 @@ const StyledFooter = styled.footer`
 	display: flex;
 	justify-content: space-between;
 
-	.logout-icon {
-		cursor: pointer;
+	${props => props.isLoggedIn && 
+		`.logout-icon {
+			cursor: pointer;
 
-		&:hover {
-			text-shadow: 0.07rem -0.03rem ${props => props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props => props.theme.colors.contrastTwo};
+			&:hover {
+				text-shadow: 0.07rem -0.03rem ${props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props.theme.colors.contrastTwo};
 			}
-		&:active {
-			transform: scale3d(1.15, 1.15, 1.15);
-		}
-	}
-`;
+			&:active {
+				transform: scale3d(1.15, 1.15, 1.15);
+			}
+		}`
+	}`;
 
 export default StyledFooter;
