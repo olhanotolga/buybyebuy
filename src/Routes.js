@@ -10,6 +10,7 @@ import Cart from './components/CartCheckout/Cart';
 import Checkout from './components/CartCheckout/Checkout';
 import NotFound from './components/NotFound';
 import ThankYou from './components/ThankYou';
+import PrivateRoute from './components/PrivateRoute';
 
 const Routes = () => (
 	<ThemeProvider theme={theme}>
@@ -20,8 +21,8 @@ const Routes = () => (
 				<Route path='/register' component={Registration}/>
 				<Route path='/products' exact component={Products}/>
 				<Route path='/products/:product' exact component={ProductDetails}/>
-				<Route path='/cart' component={Cart}/>
-				<Route path='/checkout' component={Checkout}/>
+				<PrivateRoute path='/cart' component={Cart} redirectTo='/login'/>
+				<PrivateRoute path='/checkout' component={Checkout} redirectTo='/login'/>
 				<Route path='/thankyou' component={ThankYou}/>
 				{/* 404 page */}
 				<Route component={NotFound}/>
