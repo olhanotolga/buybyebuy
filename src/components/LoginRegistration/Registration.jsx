@@ -8,7 +8,7 @@ import { Button } from '../../styles/globalStyles';
 
 
 const Registration = () => {
-	const {users, setUsers, userData, setUserData} = useContext(MyContext);
+	const {userData, setUserData} = useContext(MyContext);
 	const [error, dispatchError] = useReducer(signupErrorReducer, '');
 	const [confirmPW, setConfirmPW] = useState('');
 	const focusField = useRef();
@@ -22,19 +22,15 @@ const Registration = () => {
 	}
 	const handleInputError = (dispatcher) => {
 		dispatchError(dispatcher);
-		setUserData({username: '', password: ''});
+		setUserData({ username: '', password: '' });
 		setConfirmPW('');
 	}
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (userData.password !== confirmPW) {
-			return handleInputError('DISPLAY_MISMATCH');
-		}
-		if (userData.password === '') {
-			return handleInputError('DISPLAY_EMPTY');
-		}
-		setUsers({...users, [userData.username]: userData.password});
+		if (userData.username === '') return handleInputError('DISPLAY_EMPTY_UN');
+		if (userData.password === '') return handleInputError('DISPLAY_EMPTY_PW');
+		if (userData.password !== confirmPW) return handleInputError('DISPLAY_MISMATCH');
 		dispatchError('DISPLAY_NULL');
 	}
 	

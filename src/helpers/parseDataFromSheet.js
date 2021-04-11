@@ -19,3 +19,4 @@ export const parseData = (data) => {
 		}
 	})
 }
+

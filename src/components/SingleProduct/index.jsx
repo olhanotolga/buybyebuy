@@ -5,17 +5,19 @@ import {Link, useHistory} from 'react-router-dom';
 import MyContext from '../../context/MyContext';
 import StyledProductPage from './styles';
 import { Button } from '../../styles/globalStyles';
-import Styled404 from '../NotFound/styles';
+import { displayPrice } from '../../helpers/sanitizeData';
+import { addNewItem } from '../../helpers/cartHelpers';
+
 
 const ProductDetails = (props) => {
 	
-	const {products, qty, cart, setCart, displayPrice, userData} = useContext(MyContext);
+	const {products, qty, cart, setCart, userData} = useContext(MyContext);
 
 	const history = useHistory();
 
 	const displayedProduct = products.find(product => product.title[0] === props.match.params.product);
 	
-	if (products.length === 0) return (<Styled404/>)
+	if (products.length === 0) return null;
 
 	// The product is defined either by URL params or by the item clicked on the Products page:
 	
@@ -35,20 +37,6 @@ const ProductDetails = (props) => {
 		idx = displayedProduct.id;
 	}
 	
-	const addNewItem = () => {
-		if (userData.username !== '') {
-			if (cart[idx]) {
-				const newItem = {title: title, qty: cart[idx].qty + 1, price: price};
-				setCart(prev => ({...prev,
-					[idx]: newItem}));
-			} else {
-				const newItem = {title: title, qty: 1, price: price};
-				setCart(prev => ({...prev,
-					[idx]: newItem}));
-			}
-		}
-	}
-
 	return (
 		<StyledProductPage>
 			<Header
@@ -74,13 +62,13 @@ const ProductDetails = (props) => {
 					<Button className='back' onClick={() => history.goBack()}>Back</Button>
 					<Button
 					className='buy'
-					onClick={() => addNewItem()}>
+					onClick={() => addNewItem(userData, cart, setCart, idx, title, price)}>
 						<span>Buy</span> 
 						<span className='price'>{displayPrice(price)}&curren;</span>
 					</Button>
 				</div>
 			</section>
-			<Footer className='product-footer' />
+			<Footer/>
 		</StyledProductPage>
 	)
 }

@@ -11,7 +11,7 @@
 - [x] Remove pointer cursor from logout when user is undefined
 - [x] Add protected routes / redirects
 - [x] Check how the states persist across the pages / on refresh
-- [ ] MORE ERRORS in Login/Registration
+- [x] MORE ERRORS in Login/Registration
 - [ ] Check responsiveness
 - [ ] Add screenshots
 - [ ] Deploy! Add link in README

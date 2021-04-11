@@ -7,9 +7,11 @@ import { StyledCheckout } from './styles';
 import { StyledCheckoutItem } from './CartItem';
 import { StyledCheckoutSummaryItem } from './SummaryItem';
 import { Button } from '../../styles/globalStyles';
+import { displayPrice } from '../../helpers/sanitizeData';
+
 
 const Checkout = () => {
-	const {cart, subtotal, shipping, total, displayPrice, setTotal, reset} = useContext(MyContext);
+	const {cart, subtotal, shipping, total, setTotal, reset} = useContext(MyContext);
 
 	const history = useHistory();
 

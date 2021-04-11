@@ -2,7 +2,6 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import { Button } from '../../styles/globalStyles';
 import Header from '../Header';
-// import '../../assets/css/NotFound.css';
 import Styled404 from './styles';
 
 const NotFound = () => {

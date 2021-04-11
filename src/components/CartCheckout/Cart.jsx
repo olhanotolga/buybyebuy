@@ -8,6 +8,7 @@ import { StyledCartSummaryItem } from './SummaryItem';
 import MyContext from '../../context/MyContext';
 import { Button } from '../../styles/globalStyles';
 
+
 const Cart = () => {
 	const {cart, setSubtotal, subtotal, setQty, setShipping} = useContext(MyContext);
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import MyContext from '../../context/MyContext';
 import ProductCard from './ProductCard';
@@ -8,13 +8,7 @@ import { StyledProductsPage } from './styles';
 
 const Products = () => {
 
-	const {userData, products, qty, setQty, cart} = useContext(MyContext);
-
-	useEffect(() => {
-		setQty(
-			cart && Object.values(cart).reduce((acc, item) => acc + item.qty, 0)
-		)
-	}, [cart, setQty])
+	const {userData, products, qty} = useContext(MyContext);
 
 	return (
 		<StyledProductsPage className='products-page'>
@@ -44,7 +38,7 @@ const Products = () => {
 					/>
 				})}
 			</section>
-			<Footer className='products-footer' />
+			<Footer/>
 		</StyledProductsPage>
 	)
 }

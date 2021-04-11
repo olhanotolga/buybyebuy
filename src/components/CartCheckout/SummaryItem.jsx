@@ -1,10 +1,8 @@
-import React, {useContext} from 'react';
-import MyContext from '../../context/MyContext';
+import React from 'react';
 import {StylesForCartSummaryItem, StylesForCheckoutSummaryItem} from './styles';
+import { displayPrice } from '../../helpers/sanitizeData';
 
 const SummaryItem = ({className, title, price}) => {
-
-	const {displayPrice} = useContext(MyContext);
 	
 	return (
 		<>

@@ -2,14 +2,19 @@ import React, {useContext, useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import MyContext from '../../context/MyContext';
 import StyledFooter from './styles';
-// import '../assets/css/Footer.css';
+import { displayGreeting } from '../../helpers/greet';
 
 const Footer = ({className}) => {
-	const {userData, reset, greetings, displayGreeting} = useContext(MyContext);
+	const {userData, reset} = useContext(MyContext);
 	
 	const [address, setAddress] = useState('');
 
 	const history = useHistory();
+
+	useEffect(() => {
+		const currGreeting = displayGreeting();
+		setAddress(currGreeting);
+	}, [])
 
 	const logOut = () => {
 		if (userData.username !== '') {
@@ -17,11 +22,6 @@ const Footer = ({className}) => {
 			history.push('/login');
 		}
 	}
-
-	useEffect(() => {
-		const currGreeting = displayGreeting(greetings);
-		setAddress(currGreeting);
-	}, [displayGreeting, greetings])
 
 	return (
 		<StyledFooter 

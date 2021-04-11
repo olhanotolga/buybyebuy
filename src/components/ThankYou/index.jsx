@@ -2,7 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import { Button } from '../../styles/globalStyles';
 import Header from '../Header';
-import ReplayIcon from '../ReplayIcon';
+import ReplayIcon from './ReplayIcon';
 import StyledTY from './styles';
 
 const ThankYou = () => {
