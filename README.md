@@ -7,12 +7,12 @@
 - [x] Refactor the Styled Components
 - [x] Pre-save the products (so that individual propducts can be also accessed)
 - [x] Add pre-filled demo user data at login
-- [ ] Split Contexts
+- [x] Split Functionality
 - [x] Remove pointer cursor from logout when user is undefined
 - [x] Add protected routes / redirects
 - [x] Check how the states persist across the pages / on refresh
 - [x] MORE ERRORS in Login/Registration
-- [ ] Check responsiveness
+- [x] Check responsiveness
 - [ ] Add screenshots
 - [ ] Deploy! Add link in README
 - [ ] Link in Portfolio

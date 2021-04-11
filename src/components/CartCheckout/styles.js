@@ -54,10 +54,12 @@ export const StyledCart = styled(PageMain)`
 		}
 
 	}
-	@media screen and (min-width: 400px) {
+	@media screen and (min-width: 450px) {
 		section {
-			margin: 2rem;
+			width: clamp(50%, 900px, 100%);
+			margin: auto;
 			padding: 2rem;
+			flex-grow: 0;
 		}
 	}
 
@@ -185,7 +187,7 @@ export const StyledCheckout = styled(StyledCart)`
 		gap: 1rem;
 		align-content: space-between;
 
-		& > *:not(.checkout-container-header):not(button) {
+		& > *:not(div):not(button) {
 			border-bottom: 0.15rem solid ${props => props.theme.colors.light};
 		}
 

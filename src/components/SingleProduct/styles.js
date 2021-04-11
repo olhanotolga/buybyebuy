@@ -24,7 +24,8 @@ const StyledProductPage = styled(PageMain)`
 		align-items: center;
 
 		@media screen and (min-width: 450px) {
-			margin: 2rem;
+			flex-grow: 0;
+			margin: auto;
 		}
 	}
 	.product-image {
@@ -65,6 +66,7 @@ const StyledProductPage = styled(PageMain)`
 
 	footer {
 		background-color: ${props => props.theme.colors.light};
+		margin-top: auto;
 	}
 `;
 
