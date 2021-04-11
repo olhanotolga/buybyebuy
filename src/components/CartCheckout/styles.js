@@ -187,6 +187,10 @@ export const StyledCheckout = styled(StyledCart)`
 		gap: 1rem;
 		align-content: space-between;
 
+		h3 {
+			padding-bottom: 1rem;
+		}
+
 		& > *:not(div):not(button) {
 			border-bottom: 0.15rem solid ${props => props.theme.colors.light};
 		}

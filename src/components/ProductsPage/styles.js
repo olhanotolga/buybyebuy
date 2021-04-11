@@ -13,9 +13,9 @@ export const StyledProductsPage = styled(PageMain)`
 
 	.products-display {
 		display: grid;
-		grid-template: repeat(auto-fit, 20rem) / repeat(auto-fit, 20rem);
-		grid-auto-columns: minmax(20rem, 1fr);
-		grid-auto-rows: 20rem;
+		grid-template: repeat(auto-fit, 22rem) / repeat(auto-fit, 22rem);
+		grid-auto-columns: minmax(22rem, 1fr);
+		grid-auto-rows: 22rem;
 		justify-content: center;
 		gap: 1rem;
 		margin: 2rem;
