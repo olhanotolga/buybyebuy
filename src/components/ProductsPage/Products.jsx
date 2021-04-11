@@ -9,7 +9,7 @@ import { StyledProductsPage } from './styles';
 const Products = () => {
 
 	const context = useContext(MyContext);
-	const {parsedProducts, qty, setQty, cart} = context;
+	const {products, qty, setQty, cart} = context;
 
 	useEffect(() => {
 		setQty(
@@ -31,7 +31,7 @@ const Products = () => {
 			</Header>
 
 			<section className='products-display'>
-				{parsedProducts && parsedProducts.map(product => {
+				{products && products.map(product => {
 					return <ProductCard
 						key={product.id}
 						idx={product.id}

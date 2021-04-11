@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MyContext from './MyContext';
 
 const MyProvider = (props) => {
 	// products-related data
 	const [products, setProducts] = useState([]);
-	const [parsedProducts, setParsedProducts] = useState([]);
 
 	// user-related data
 	const [users, setUsers] = useState({
@@ -26,6 +25,12 @@ const MyProvider = (props) => {
 	const [shipping, setShipping] = useState(0);
 	const [total, setTotal] = useState(0);
 
+
+	useEffect(() => {
+		setQty(
+			cart && Object.values(cart).reduce((acc, item) => acc + item.qty, 0)
+		)
+	}, [cart, setQty])
 
 	// FUNCTIONS
 
@@ -65,7 +70,6 @@ const MyProvider = (props) => {
 	return (
 		<MyContext.Provider value={{
 			products, setProducts,
-			parsedProducts, setParsedProducts,
 			users, setUsers,
 			userData, setUserData,
 			cart, setCart,

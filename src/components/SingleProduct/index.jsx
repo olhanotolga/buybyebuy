@@ -1,17 +1,40 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import {Link, useHistory} from 'react-router-dom';
 import MyContext from '../../context/MyContext';
 import StyledProductPage from './styles';
 import { Button } from '../../styles/globalStyles';
+import Styled404 from '../NotFound/styles';
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
+	
+	const {products, qty, cart, setCart, displayPrice, userData} = useContext(MyContext);
+
 	const history = useHistory();
-	const {title, description, image, price, idx} = history.location.state;
 
-	const {qty, cart, setCart, setQty, displayPrice, userData} = useContext(MyContext);
+	const displayedProduct = products.find(product => product.title[0] === props.match.params.product);
+	
+	if (products.length === 0) return (<Styled404/>)
 
+	// The product is defined either by URL params or by the item clicked on the Products page:
+	
+	let title, description, image, price, idx;
+	
+	if (history.location.state) {
+		title = history.location.state.title;
+		description = history.location.state.description;
+		image = history.location.state.image;
+		price = history.location.state.price;
+		idx = history.location.state.idx;
+	} else {
+		title = displayedProduct.title[0];
+		description = displayedProduct.description[0];
+		image = displayedProduct.image[0];
+		price = displayedProduct.price[0];
+		idx = displayedProduct.id;
+	}
+	
 	const addNewItem = () => {
 		if (userData.username !== '') {
 			if (cart[idx]) {
@@ -26,11 +49,7 @@ const ProductDetails = () => {
 		}
 	}
 
-	useEffect(() => {
-		setQty(
-			cart && Object.values(cart).reduce((acc, item) => acc + item.qty, 0)
-		)
-	}, [cart, setQty])
+	
 
 	return (
 		<StyledProductPage>

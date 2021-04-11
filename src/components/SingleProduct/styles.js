@@ -4,9 +4,9 @@ import { PageMain } from '../../styles/globalStyles';
 const StyledProductPage = styled(PageMain)`
 	background-color: ${props => props.theme.colors.darkgrey};
 
- header {
-	background-color: ${props => props.theme.colors.light};
-	color: ${props => props.theme.colors.dark};
+	header {
+		background-color: ${props => props.theme.colors.light};
+		color: ${props => props.theme.colors.dark};
 	
 		.material-icons {
 			color: ${props => props.theme.colors.dark};
@@ -17,11 +17,15 @@ const StyledProductPage = styled(PageMain)`
 		flex-grow: 1;
 		background-color: ${props => props.theme.colors.light};
 		color: ${props => props.theme.colors.dark};
-		margin: 2rem;
+		margin: 2rem 1rem;
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		@media screen and (min-width: 450px) {
+			margin: 2rem;
+		}
 	}
 	.product-image {
 		width: 100%;

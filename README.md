@@ -3,8 +3,9 @@
 ## TODOS
 
 - [x] Style with Styled Components
-- [ ] Create styled button component
-- [ ] Refactor the Styled Components
+- [x] Create styled button component
+- [x] Refactor the Styled Components
+- [ ] Pre-save the products (so that individual propducts can be also accessed)
 - [ ] Remove pointer cursor from logout when user is undefined
 - [ ] Make the cart icon clickable (not only the circled number)
 - [ ] A way to indicate that an item has been added to the cart
