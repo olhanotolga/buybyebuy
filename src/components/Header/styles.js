@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
 		margin-left: auto;
 	}
 
-	a {
+	a:not(.homepage-header a) {
 		color: inherit;
     text-decoration: none;
     padding: 0.3rem 0.75rem;

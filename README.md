@@ -5,9 +5,11 @@
 - [x] Style with Styled Components
 - [x] Create styled button component
 - [x] Refactor the Styled Components
-- [ ] Pre-save the products (so that individual propducts can be also accessed)
+- [x] Pre-save the products (so that individual propducts can be also accessed)
+- [x] Add pre-filled demo user data at login
 - [ ] Remove pointer cursor from logout when user is undefined
 - [ ] Make the cart icon clickable (not only the circled number)
+- [ ] Split Contexts
 - [ ] A way to indicate that an item has been added to the cart
 - [ ] Check how the states persist across the pages / on refresh
 - [ ] MORE ERRORS in Login/Registration

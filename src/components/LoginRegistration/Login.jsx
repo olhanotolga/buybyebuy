@@ -36,6 +36,10 @@ const Login = () => {
 			handleInputError('DISPLAY_MISMATCH')
 		}
 	}
+
+	const fillGuestUserData = () => {
+		setUserData({username: 'admin', password: 'iamtheboss'})
+	}
 	
 	if (!error && error !== '') {
 		return	<Redirect to={{
@@ -46,6 +50,8 @@ const Login = () => {
 	return (
 		<StyledLoginPage>
 			<Header className='login-header' title='Have we met?' />
+
+			<p onClick={() => fillGuestUserData() }>Use boss account</p>
 			
 			<form onSubmit={(e) => handleSubmit(e)}>
 				{error && <p className='failure-message'>{error}</p>}
@@ -75,7 +81,9 @@ const Login = () => {
 					/>
 				<Button>Log in</Button>
 			</form>
+
 			<p onClick={() => history.push('/register') }>Or sign up</p>
+			
 		</StyledLoginPage>
 	)
 }

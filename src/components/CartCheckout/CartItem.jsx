@@ -62,7 +62,7 @@ const CartItem = ({className, title, amount, price, addRemove, idx}) => {
 }
 
 
-export const StyledCartItem = ({key, className, title, amount, price, idx, addRemove}) => {
+export const StyledCartItem = ({className, title, amount, price, idx, addRemove}) => {
 	return (
 		<StylesForCartItem>
 			<CartItem
@@ -77,7 +77,7 @@ export const StyledCartItem = ({key, className, title, amount, price, idx, addRe
 	)
 }
 
-export const StyledCheckoutItem = ({key, className, title, amount, price}) => {
+export const StyledCheckoutItem = ({className, title, amount, price}) => {
 	return (
 		<StylesForCheckoutItem>
 			<CartItem

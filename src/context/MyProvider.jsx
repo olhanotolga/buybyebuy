@@ -8,7 +8,6 @@ const MyProvider = (props) => {
 	// user-related data
 	const [users, setUsers] = useState({
 		'admin': 'iamtheboss',
-		'rory': '1234567',
 		'olhanotolga': 'bestpassword'
 	})
 

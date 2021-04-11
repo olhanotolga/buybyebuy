@@ -4,10 +4,15 @@ import { PageMain } from '../../styles/globalStyles';
 export const StyledLoginPage = styled(PageMain)`
 	background-color: ${props => props.theme.colors.dark};
 	color: ${props => props.theme.colors.contrastTwo};
+	justify-content: center;
+
+	header {
+		margin-bottom: auto;
+	}
 
 	form {
 		width: clamp(50%, 500px, 90%);
-		margin: 15vh auto 2rem auto;
+		margin: 0 auto 2rem auto;
 		display: flex;
 		flex-direction: column;
 
@@ -43,11 +48,15 @@ export const StyledLoginPage = styled(PageMain)`
 	& > p {
 		text-align: center;
 		text-transform: uppercase;
-		margin-bottom: auto;
 		text-decoration: underline;
-			text-underline-offset: 0.5rem;
+		text-underline-offset: 0.5rem;
 		text-decoration-thickness: 0.3rem;
 		cursor: pointer;
+		margin-bottom: 2.5rem;
+
+		&:last-of-type {
+			margin-bottom: auto;
+		}
 	}
 `;
 

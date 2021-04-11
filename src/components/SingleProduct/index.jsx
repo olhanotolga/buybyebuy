@@ -49,8 +49,6 @@ const ProductDetails = (props) => {
 		}
 	}
 
-	
-
 	return (
 		<StyledProductPage>
 			<Header
