@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { PageMain } from '../../styles/globalStyles';
 
-const Styled404 = styled.main`
+const Styled404 = styled(PageMain)`
 	justify-content: center;
 
 	header {
@@ -9,8 +10,8 @@ const Styled404 = styled.main`
 		h1 {
 			font-size: calc(4rem + 3vmin);
 			padding-bottom: 1rem;
-			border-bottom: 0.3rem solid var(--contrast-one);
-			color: var(--light);
+			border-bottom: 0.3rem solid ${props => props.theme.colors.contrastOne};
+			color: ${props => props.theme.colors.light};
 		}
 	}
 
@@ -23,10 +24,9 @@ const Styled404 = styled.main`
 
 		button {
 			width: 16ch;
-			background-color: var(--light);
-			color: var(--dark);
+			background-color: ${props => props.theme.colors.light};
+			color: ${props => props.theme.colors.dark};
 			margin: 1rem;
-			cursor: pointer;
 		}
 	}
 `;

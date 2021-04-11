@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { PageMain } from '../../styles/globalStyles';
 
-export const StyledLoginPage = styled.main`
-	background-color: var(--dark);
-	color: var(--contrast-two);
+export const StyledLoginPage = styled(PageMain)`
+	background-color: ${props => props.theme.colors.dark};
+	color: ${props => props.theme.colors.contrastTwo};
 
 	form {
 		width: clamp(50%, 500px, 90%);
@@ -11,7 +12,7 @@ export const StyledLoginPage = styled.main`
 		flex-direction: column;
 
 		.failure-message {
-			color: var(--contrast-two);
+			color: ${props => props.theme.colors.contrastTwo};
 			text-transform: uppercase;
 			text-align: center;
 			margin-bottom: 2rem;
@@ -24,18 +25,18 @@ export const StyledLoginPage = styled.main`
 
 		input {
 			margin-bottom: 2rem;
-			border: 0.3rem solid var(--light);
+			border: 0.3rem solid ${props => props.theme.colors.light};
 			padding: 0.5rem 1rem;
-			background-color: var(--dark);
-			color: var(--contrast-two);
+			background-color: ${props => props.theme.colors.dark};
+			color: ${props => props.theme.colors.contrastTwo};
 		}
 		input::placeholder {
-			color: var(--contrast-two);
+			color: ${props => props.theme.colors.contrastTwo};
 			text-transform: uppercase;
 		}
 		button {
-			background-color: var(--light);
-			color: var(--dark);
+			background-color: ${props => props.theme.colors.light};
+			color: ${props => props.theme.colors.dark};
 		}
 	}
 	
@@ -51,9 +52,9 @@ export const StyledLoginPage = styled.main`
 `;
 
 export const StyledRegistrationPage = styled(StyledLoginPage)`
-	background-color: var(--darkgrey);
+	background-color: ${props => props.theme.colors.darkgrey};
 	
 	form input {
-		background-color: var(--darkgrey);
+		background-color: ${props => props.theme.colors.darkgrey};
 	}
 `;

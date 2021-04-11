@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { PageMain } from '../../styles/globalStyles';
 
-const StyledTY = styled.main`
-
+const StyledTY = styled(PageMain)`
 	justify-content: center;
 
 header {
-	background-color: var(--contrast-three);
+	background-color: ${props => props.theme.colors.contrastThree};
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
@@ -20,7 +20,7 @@ header {
 	}
 
 	& button {
-		background-color: var(--dark);
+		background-color: ${props => props.theme.colors.dark};
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -32,17 +32,14 @@ header {
 	.startagain {
 		font-size: calc(1rem + 1vmin);
 		white-space: break-spaces;
-		color: var(--light);
+		color: ${props => props.theme.colors.light};
 	}
 	& svg {
 		width: calc(4rem + 3vmin);
 			height: auto;
-			fill: var(--light);
+			fill: ${props => props.theme.colors.light};
 	}
 }
-
-
-
 `;
 
 export default StyledTY;

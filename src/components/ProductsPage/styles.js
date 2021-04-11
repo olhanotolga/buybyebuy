@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import mask from '../../assets/mask.svg';
+import { PageMain } from '../../styles/globalStyles';
 
-export const StyledProductsPage = styled.main`
+export const StyledProductsPage = styled(PageMain)`
 
-	background-color: var(--light);
-	color: var(--light);
+	background-color: ${props => props.theme.colors.light};
+	color: ${props => props.theme.colors.light};
 
 	header {
-		background-color: var(--dark);
+		background-color: ${props => props.theme.colors.dark};
 	}
 
 	.products-display {
@@ -21,13 +22,13 @@ export const StyledProductsPage = styled.main`
 	}
 
 	footer {
-		background-color: var(--dark);
+		background-color: ${props => props.theme.colors.dark};
 	}
 `;
 
 export const StyledProductCard = styled.section`
 	
-	background-color: var(--dark);
+	background-color: ${props => props.theme.colors.dark};
 	display: grid;
 	grid-template: 1fr repeat(2, auto) / 1fr auto;
 	padding: 1rem 0.3rem 2rem;
@@ -51,17 +52,17 @@ export const StyledProductCard = styled.section`
 	}
 	.product-card-clickable {
 		grid-area: 3 / 1 / 4 / 2;
-		color: var(--light);
-		color: var(--contrast-three);
+		color: ${props => props.theme.colors.light};
+		color: ${props => props.theme.colors.contrastThree};
 		text-underline-offset: 0.1rem;
-		text-decoration-color: var(--contrast-three);
+		text-decoration-color: ${props => props.theme.colors.contrastThree};
 		text-decoration-thickness: 0.15rem;
 		font-weight: 300;
 	}
 	.product-card-price {
 		grid-area: 2 / 2 / 3 / 3;
 		justify-self: center;
-		color: var(--contrast-one);
+		color: ${props => props.theme.colors.contrastOne};
 		font-weight: 800;
 		font-size: 150%;
 		justify-self: end;
@@ -75,7 +76,7 @@ export const StyledProductCard = styled.section`
 			transition: 0.3s;
 			
 			&:hover {
-				text-shadow: 0.07rem -0.03rem var(--contrast-one), -0.07rem 0.03rem var(--contrast-two);
+				text-shadow: 0.07rem -0.03rem ${props => props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props => props.theme.colors.contrastTwo};
 			}
 			&:active {
 				transform: scale3d(1.15, 1.15, 1.15);

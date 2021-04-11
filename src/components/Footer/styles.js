@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
 		cursor: pointer;
 
 		&:hover {
-			text-shadow: 0.07rem -0.03rem var(--contrast-one), -0.07rem 0.03rem var(--contrast-two);
+			text-shadow: 0.07rem -0.03rem ${props => props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props => props.theme.colors.contrastTwo};
 			}
 		&:active {
 			transform: scale3d(1.15, 1.15, 1.15);

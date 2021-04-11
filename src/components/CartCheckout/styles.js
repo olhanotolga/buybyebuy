@@ -1,22 +1,23 @@
 import styled from 'styled-components';
+import { PageMain } from '../../styles/globalStyles';
 
-// StyledCart
-export const StyledCart = styled.main`
-	background-color: var(--light);
+// CART
+export const StyledCart = styled(PageMain)`
+	background-color: ${props => props.theme.colors.light};
 
 	header {
-		background-color: var(--dark);
-		color: var(--contrast-three);
+		background-color: ${props => props.theme.colors.dark};
+		color: ${props => props.theme.colors.contrastThree};
 		
 		.material-icons {
-			color: var(--contrast-one);
+			color: ${props => props.theme.colors.contrastOne};
 		}
 	}
 
 	section {
 		flex-grow: 1;
-		background-color: var(--dark);
-		color: var(--light);
+		background-color: ${props => props.theme.colors.dark};
+		color: ${props => props.theme.colors.light};
 		margin: 2rem 1rem;
 		padding: 2rem 1rem;
 		display: flex;
@@ -39,7 +40,7 @@ export const StyledCart = styled.main`
 		}
 
 		button {
-			color: var(--dark);
+			color: ${props => props.theme.colors.dark};
 			margin-top: 2rem;
 			padding: 1rem 2rem;
 		}
@@ -63,26 +64,24 @@ export const StyledCart = styled.main`
 `;
 
 
-// StyledCartItem
+// CART: ITEM
 export const StylesForCartItem = styled.li`
 	display: grid;
 	justify-content: space-between;
 	text-transform: uppercase;
 	padding: 0.5rem;
 
-	border-bottom: 0.15rem solid var(--contrast-one);
+	border-bottom: 0.15rem solid ${props => props.theme.colors.contrastOne};
 	grid-template-rows: auto auto;
 	grid-template-columns: auto 3ch auto 1fr;
 	gap: 0.5rem;
-
 
 	.item-title {
 		grid-column: 1 / 4;
 	}
 	.item-price {
 		grid-column: 4 / -1;
-		/* justify-self: start; */
-		color: var(--light);
+		color: ${props => props.theme.colors.light};
 	}
 	.item-add {
 		grid-column: 1 / 2;
@@ -99,7 +98,7 @@ export const StylesForCartItem = styled.li`
 	}
 
 	.material-icons {
-		color: var(--contrast-two);
+		color: ${props => props.theme.colors.contrastTwo};
 		cursor: pointer;
 		&:active {
 			transform: scale3d(1.15, 1.15, 1.15);
@@ -108,11 +107,11 @@ export const StylesForCartItem = styled.li`
 
 	.item-amount,
 	.item-sum {
-		color: var(--contrast-three);
+		color: ${props => props.theme.colors.contrastThree};
 	}
 
 	.times {
-		color: var(--darkgrey);
+		color: ${props => props.theme.colors.darkgrey};
 	}
 
 	.item.subtotal {
@@ -120,7 +119,6 @@ export const StylesForCartItem = styled.li`
 		justify-items: center;
 		margin-top: auto;
 	}
-
 
 	@media screen and (min-width: 400px) {
 		.item-sum,
@@ -147,10 +145,9 @@ export const StylesForCartItem = styled.li`
 			grid-template: auto / repeat(2, 1fr);
 		}
 	}
-
 `;
 
-// StyledCartSummaryItem
+// CART: SUMMARY
 export const StylesForCartSummaryItem = styled.li`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -164,21 +161,21 @@ export const StylesForCartSummaryItem = styled.li`
 	}
 
 	.summary-item-price {
-		color: var(--contrast-three);
+		color: ${props => props.theme.colors.contrastThree};
 		justify-self: end;
 	}
 `;
 
 
-// StyledCheckoutItem
+// CHECKOUT
 export const StyledCheckout = styled(StyledCart)`
-	background-color: var(--contrast-one);
+	background-color: ${props => props.theme.colors.contrastOne};
 
 	header {
-		color: var(--light);
+		color: ${props => props.theme.colors.light};
 
 		.material-icons {
-			color: var(--contrast-three);
+			color: ${props => props.theme.colors.contrastThree};
 		}
 	}
 
@@ -189,18 +186,18 @@ export const StyledCheckout = styled(StyledCart)`
 		align-content: space-between;
 
 		& > *:not(.checkout-container-header):not(button) {
-			border-bottom: 0.15rem solid var(--light);
+			border-bottom: 0.15rem solid ${props => props.theme.colors.light};
 		}
 
 		button {
-			background-color: var(--contrast-two);
+			background-color: ${props => props.theme.colors.contrastTwo};
 		}
 	}
 
 `;
 
 
-// StyledCheckoutItem
+// CHECKOUT: ITEM
 export const StylesForCheckoutItem = styled(StylesForCartItem)`
 	border-bottom: none;
 	grid-template-columns: 1fr auto 1fr;
@@ -211,7 +208,7 @@ export const StylesForCheckoutItem = styled(StylesForCartItem)`
 	}
 	.item-price {
 		grid-column: 3;
-		color: var(--light);
+		color: ${props => props.theme.colors.light};
 	}
 	.item-amount {
 		grid-row: 1;
@@ -227,7 +224,7 @@ export const StylesForCheckoutItem = styled(StylesForCartItem)`
 	}
 	.item-amount,
 	.item-price {
-		color: var(--light);
+		color: ${props => props.theme.colors.light};
 	}
 
 	@media screen and (min-width: 450px) {
@@ -241,9 +238,9 @@ export const StylesForCheckoutItem = styled(StylesForCartItem)`
 
 `;
 
-// StyledCheckoutSummaryItem
+// CHECKOUT: SUMMARY
 export const StylesForCheckoutSummaryItem = styled(StylesForCartSummaryItem)`
 	.summary-item-price {
-		color: var(--light);
+		color: ${props => props.theme.colors.light};
 	}
 `;

@@ -1,21 +1,22 @@
 import styled from 'styled-components';
+import { PageMain } from '../../styles/globalStyles';
 
-const StyledProductPage = styled.main`
-	background-color: var(--darkgrey);
+const StyledProductPage = styled(PageMain)`
+	background-color: ${props => props.theme.colors.darkgrey};
 
  header {
-	background-color: var(--light);
-	color: var(--dark);
+	background-color: ${props => props.theme.colors.light};
+	color: ${props => props.theme.colors.dark};
 	
 		.material-icons {
-			color: var(--dark);
+			color: ${props => props.theme.colors.dark};
 		}
 	}
 
 	.product-page-info {
 		flex-grow: 1;
-		background-color: var(--light);
-		color: var(--dark);
+		background-color: ${props => props.theme.colors.light};
+		color: ${props => props.theme.colors.dark};
 		margin: 2rem;
 		padding: 2rem;
 		display: flex;
@@ -42,24 +43,24 @@ const StyledProductPage = styled.main`
 		button {
 			width: 15ch;
 			margin: 1rem 0.5rem;
-			color: var(--light);
+			color: ${props => props.theme.colors.light};
 		}
 		.back {
-			background-color: var(--dark);
+			background-color: ${props => props.theme.colors.dark};
 		}
 		.buy {
-			background-color: var(--contrast-two);
+			background-color: ${props => props.theme.colors.contrastTwo};
 			display: flex;
 			
 			.price {
 				margin-left: auto;
-				color: var(--contrast-three);
+				color: ${props => props.theme.colors.contrastThree};
 			}
 		}
 	}
 
 	footer {
-		background-color: var(--light);
+		background-color: ${props => props.theme.colors.light};
 	}
 `;
 

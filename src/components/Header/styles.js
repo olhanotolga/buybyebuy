@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
 	align-items: center;
 
 	h1 {
-		text-shadow: 0.07rem -0.03rem var(--contrast-one), -0.07rem 0.03rem var(--contrast-two);
+		text-shadow: 0.07rem -0.03rem ${props => props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props => props.theme.colors.contrastTwo};
 		letter-spacing: 1px;
 		font-size: calc(1rem + 3vmin);
 	}
@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
 		margin-left: auto;
 	}
 
-	a:not(.homepage-header a) {
+	a {
 		color: inherit;
     text-decoration: none;
     padding: 0.3rem 0.75rem;
@@ -26,7 +26,7 @@ const StyledHeader = styled.header`
     border-radius: 50%;
 
 		&:hover {
-			box-shadow: 0.07rem -0.03rem var(--contrast-one), -0.07rem 0.03rem var(--contrast-two);
+			box-shadow: 0.07rem -0.03rem ${props => props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props => props.theme.colors.contrastTwo};
 		}
 		&:active {
 			transform: scale3d(1.15, 1.15, 1.15);
