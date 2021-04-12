@@ -57,7 +57,7 @@ export const StyledCart = styled(PageMain)`
 	@media screen and (min-width: 450px) {
 		section {
 			width: clamp(50%, 900px, 100%);
-			margin: auto;
+			margin: 2rem auto;
 			padding: 2rem;
 			flex-grow: 0;
 		}
