@@ -13,27 +13,41 @@
 - [x] Check how the states persist across the pages / on refresh
 - [x] MORE ERRORS in Login/Registration
 - [x] Check responsiveness
-- [ ] Add screenshots
+- [x] Add screenshots
 - [ ] Deploy! Add link in README
 - [ ] Link in Portfolio
 
 ## Tech & tools
 
-- React
+- React (Hooks API)
 - Context API
 - React Router
-- Google Sheets
 - Styled Components
+- Material design icons
+- Google Sheets (data storage)
+- Canva (design & prototyping)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Designed with Canva.
+## Look & Feel
+
+### Mobile screenshots
+
+<img src="./screenshots/10-home-mobile.png" width="300" alt="BuyByeBuy homepage (mobile screen)">
+<img src="./screenshots/40-products-mobile.png" width="300" alt="BuyByeBuy products view - 2 (mobile screen)">
+<img src="./screenshots/50-cart-mobile.png" width="300" alt="BuyByeBuy shopping cart (mobile screen)">
+<img src="./screenshots/60-checkout-mobile.png" width="300" alt="BuyByeBuy checkout (mobile screen)">
+
+### Tablet/Desktop screenshots
+
+<img src="./screenshots/1-products-desktop.png" width="600" alt="BuyByeBuy products view (tablet and desktop screen)">
+<img src="./screenshots/3-checkout-desktop.png" width="600" alt="BuyByeBuy checkout (tablet and desktop screen)">
 
 ## Challenges
 
-To display the data on the 'Products' page, I created a Google Sheet and turned it into a JSON endpoint, which I then used to fetch the data. Throughout the walkthrough, I am storing the fetched products in the app's Context.
+To display the data on the 'Products' page, I created a Google Sheet and turned it into a JSON endpoint, which I then used to fetch the data. In my shop simulation, I am storing the fetched products in the app's Context.
 
-Designing the app was another tricky part, especially styling the components in a modular way. At first I used plain CSS, which was not the best decision. Switching to Styled Components made my styles look much neater.
+Designing the app was another tricky part, especially styling the components in a modular way. At first I used plain CSS, which was not the best decision. Therefore, I organized my styles in a much neater way with Styled Components, even though refactoring took some time.
 
 ## Running the app locally
 

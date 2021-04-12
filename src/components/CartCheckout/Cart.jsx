@@ -44,7 +44,7 @@ const Cart = () => {
 		<StyledCart>
 			<Header
 				className='cart-header'
-				title='products'
+				title='your cart'
 				icon='shopping_cart' />
 
 			<section className='cart-container'>
