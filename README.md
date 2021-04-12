@@ -1,21 +1,6 @@
 # BuyByeBuy — an online shop simulation
 
-## TODOS
-
-- [x] Style with Styled Components
-- [x] Create styled button component
-- [x] Refactor the Styled Components
-- [x] Pre-save the products (so that individual propducts can be also accessed)
-- [x] Add pre-filled demo user data at login
-- [x] Split Functionality
-- [x] Remove pointer cursor from logout when user is undefined
-- [x] Add protected routes / redirects
-- [x] Check how the states persist across the pages / on refresh
-- [x] MORE ERRORS in Login/Registration
-- [x] Check responsiveness
-- [x] Add screenshots
-- [ ] Deploy! Add link in README
-- [ ] Link in Portfolio
+A frontend-only webshop simulation. [Shop away here](https://buybyebuy.vercel.app/). Have fun!
 
 ## Tech & tools
 
