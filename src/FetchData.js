@@ -26,7 +26,7 @@ const FetchData = () => {
 		}
 		fetchProducts();
 		
-	}, [])
+	}, [setProducts])
 
 	return null;
 }
