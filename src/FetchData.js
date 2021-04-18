@@ -10,17 +10,23 @@ const FetchData = () => {
 		const URI = process.env.REACT_APP_URI;
 
 		const fetchProducts = async () => {
-			const response = await fetch(URI);
-			const results = await response.json();
+			try {
+				const response = await fetch(URI);
+				const results = await response.json();
 
-			const retrievedProducts = results.feed.entry;
-			const parsedProducts = parseData(retrievedProducts);
+				const retrievedProducts = results.feed.entry;
+				const parsedProducts = parseData(retrievedProducts);
+				
+				if (parsedProducts.length === 0) return <h1>NOT LOADED</h1>
 
-			setProducts(parsedProducts);
+				setProducts(parsedProducts);
+			} catch(err) {
+				console.log(err);
+			}
 		}
 		fetchProducts();
 		
-	}, [setProducts])
+	}, [])
 
 	return null;
 }

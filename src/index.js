@@ -4,8 +4,6 @@ import BuyByeBuy from './components/BuyByeBuy';
 import './assets/css/base.css';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<BuyByeBuy />
-	</React.StrictMode>,
+		<BuyByeBuy />,
 	document.getElementById('root')
 );
