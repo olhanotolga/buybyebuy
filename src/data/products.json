@@ -1,0 +1,117 @@
+{
+  "products": [
+    {
+      "id": "RMe9dIiV54t8eKt4XjG6M",
+      "title": "air",
+      "info": "breathe",
+
+      "description": "Inhale with air! A unique breathable substance that contains oxygen. Extremely easy to maintain: fills in any container. No expiration date.",
+      "price": 124.0,
+
+      "image": "https://images.unsplash.com/photo-1494931216633-3f436bf43829?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "LWpOb_SK-d0nIMQ2_H27H",
+      "title": "bubbles",
+      "info": "burst",
+
+      "description": "Everyone loves bubbles aka thin films of liquid enclosing air. Extremely lightweight and unstable. Buy them in dozens!",
+      "price": 6.7,
+
+      "image": "https://images.unsplash.com/photo-1594035519981-62c9cef33ca9?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "L9pq8_nogW35bwghFYRJR",
+      "title": "dust",
+      "info": "capture",
+
+      "description": "Easily dispersible fine particles of solid matter. Contains: grinded volcanic rock, dead skin, mites, pollen, stellar matter.",
+      "price": 0.64,
+
+      "image": "https://images.unsplash.com/photo-1515089651103-49a692dd259c?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "LT9FKzkjrGrOnP6d7sbOJ",
+      "title": "black hole",
+      "info": "disappear",
+
+      "description": "Get yourself a Black Hole to disappear completely! Minimum size and maximum weight. Free shipping: You will be delivered to a Black Hole!",
+      "price": 7.8e10,
+
+      "image": "https://www.pixelstalk.net/wp-content/uploads/2016/08/Black-Hole-Photo-HD.jpg"
+    },
+    {
+      "id": "n0uVzSr-lHuJU55DuT5RO",
+      "title": "microbe",
+      "info": "observe",
+
+      "description": "An ideal pet for you. Come in various shapes, colors, sizes, and opacity levels. Easy maintenance and cost-effectiveness guaranteed!",
+      "price": 125.0,
+
+      "image": "https://images.unsplash.com/photo-1580377968242-daed42865732?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "NqFfk_Lq4r3QkszZwCgEC",
+      "title": "fungus",
+      "info": "coexist",
+
+      "description": "Dangerous toxins or life-saving medicine? Choose your Petri dish of Aspergillus sp. or Penicillium sp.!",
+      "price": 850.0,
+
+      "image": "https://images.unsplash.com/photo-1598144865403-1636bdf959dd?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "RmQesEHQDLGLw2IlWKOev",
+      "title": "sand",
+      "info": "disperse",
+
+      "description": "Turn your place into a playground, a sandy beach, or a desert. All you need is a little sand!",
+      "price": 98.0,
+
+      "image": "https://images.unsplash.com/photo-1561622484-112870fba978?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "r_xsKJz1UtLbGZRtnPk3O",
+      "title": "time",
+      "info": "waste",
+      "description": "Oh yes you can buy it!",
+      "price": 5.0e9,
+
+      "image": "https://images.unsplash.com/photo-1504197832061-98356e3dcdcf?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "vqkhdYS4Wh-V3hyjtTYPz",
+      "title": "grass",
+      "info": "yearn",
+      "description": "Especially nostalgic in winter...",
+      "price": 1000.0,
+
+      "image": "https://images.unsplash.com/photo-1533460004989-cef01064af7e?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "BbiajPUk-yIQCz6XUyNqT",
+      "title": "mess",
+      "info": "let in",
+      "description": "Let the mess into your life.",
+      "price": 1.99,
+
+      "image": "https://images.unsplash.com/photo-1612334001654-90ad3288602d?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "0yRd5QZ9-jqtSr-TBceN3",
+      "title": "rocks",
+      "info": "persist",
+      "description": "The silent witnesses of our glory and decay.",
+      "price": 29.99,
+      "image": "https://images.unsplash.com/photo-1543128252-56605f89e5d1?fit=crop&w=1000&q=80"
+    },
+    {
+      "id": "0Ifu3K3xqwnoOM_4-GI9O",
+      "title": "smoke",
+      "info": "evaporate",
+      "description": "Most often the successor of fire.",
+      "price": 0.99,
+      "image": "https://images.unsplash.com/photo-1514931181523-5fc9ac41ea38?fit=crop&w=1071&q=80"
+    }
+  ]
+}
