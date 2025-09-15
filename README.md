@@ -4,15 +4,15 @@ A frontend-only webshop simulation. [Shop away here](https://buybyebuy.vercel.ap
 
 ## Tech & tools
 
-- React (Hooks API)
+- React
 - Context API
 - React Router
 - Styled Components
 - Material design icons
-- Google Sheets (data storage)
 - Canva (design & prototyping)
+- Webpack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was migrated from CRA (Create React App) to Webpack.
 
 ## Look & Feel
 
@@ -30,6 +30,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Challenges
 
+### Maintenance (2025)
+
+I was reluctant to kill this project as I kind of liked its look and feel. To keep it going, I had to:
+
+1. Deal with the Google Sheets as the URL has expired.
+First, I wanted to continue using Google Sheets but realized that setting up a project in Console and managing the authentication and choosing a Node-friendly library to use was probably an overkill.
+So I am lazily keeping the JSON file with all the products inside the project folder.
+
+2. Move away from the discontinued CRA.
+I decided to go with Webpack because that's what I used in my latest job. Took me some time to set it up because of different requirements, e.g. using an SVG as a mask for images.
+
+### Old (2021)
+
 To display the data on the 'Products' page, I created a Google Sheet and turned it into a JSON endpoint, which I then used to fetch the data. In my shop simulation, I am storing the fetched products in the app's Context.
 
 Designing the app was another tricky part, especially styling the components in a modular way. At first I used plain CSS, which was not the best decision. Therefore, I organized my styles in a much neater way with Styled Components, even though refactoring took some time.
@@ -40,6 +53,4 @@ Clone the repository and run `npm install` in the project directory to install t
 
 `npm run start` — runs the app in the development mode at `http://localhost:3000`.
 
-`npm run build` — builds the app for production to the build folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm run build` — builds the app for production to the build folder.
