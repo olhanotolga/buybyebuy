@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Login from './components/LoginRegistration/Login';
 import Registration from './components/LoginRegistration/Registration';
 import Products from './components/ProductsPage/Products';
-import ProductDetails from './components/SingleProduct/';
+import ProductDetails from './components/SingleProduct';
 import Cart from './components/CartCheckout/Cart';
 import Checkout from './components/CartCheckout/Checkout';
 import NotFound from './components/NotFound';
