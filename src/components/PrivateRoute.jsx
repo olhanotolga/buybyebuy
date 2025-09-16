@@ -1,15 +1,19 @@
 import React, { useContext } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { useNavigate } from "react-router";
 import MyContext from '../context/MyContext';
 
-const PrivateRoute = ({ path, component, redirectTo }) => {
+const PrivateRoute = ({ component: Component, redirectTo }) => {
   const { userData } = useContext(MyContext);
+  const navigate = useNavigate();
 
-  return userData.username !== '' ? (
-    <Route path={path} component={component} />
-  ) : (
-    <Redirect to={redirectTo} />
-  );
+  if (userData.username === '') {
+    navigate(redirectTo)
+  } else {
+    return <Component/>
+
+  }
+  
+;
 };
 
 export default PrivateRoute;
