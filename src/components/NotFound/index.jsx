@@ -1,24 +1,22 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { Button } from '../../styles/globalStyles';
 import Header from '../Header';
 import Styled404 from './styles';
 
 const NotFound = () => {
+  const navigate = useNavigate();
 
-	const history = useHistory();
+  return (
+    <Styled404>
+      <Header title='404' />
 
-	return (
-		<Styled404>
-			<Header title='404' />
-
-			<section className='btns404'>
-				<Button onClick={() => history.goBack()}>Go back</Button>
-				<Button onClick={() => history.push('/')}>Go home</Button>
-			</section>
-
-		</Styled404>
-	)
-}
+      <section className='btns404'>
+        <Button onClick={() => navigate(-1)}>Go back</Button>
+        <Button onClick={() => navigate('/')}>Go home</Button>
+      </section>
+    </Styled404>
+  );
+};
 
 export default NotFound;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router';
 import LoginIcon from '../LoginRegistration/LoginIcon';
 import Header from '../Header';
 import StyledHome from './styles';
