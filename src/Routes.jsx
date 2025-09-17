@@ -1,6 +1,5 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router';
-import { RouterProvider } from 'react-router/dom';
+import { BrowserRouter, Routes, Route } from "react-router";
 import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
 import Home from './components/Home';
@@ -12,49 +11,27 @@ import Cart from './components/CartCheckout/Cart';
 import Checkout from './components/CartCheckout/Checkout';
 import NotFound from './components/NotFound';
 import ThankYou from './components/ThankYou';
-import PrivateRoute from './components/PrivateRoute';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    children: [
-      { index: true, Component: Home },
-      { path: 'login', Component: Login },
-      { path: 'register', Component: Registration },
-      {
-        path: 'products',
-        children: [
-          { index: true, Component: Products },
-          { path: ':product', Component: ProductDetails },
-        ],
-      },
-      {
-        path: 'cart',
-        Component: Cart,
-      },
-      {
-        path: 'checkout',
-        Component: Checkout,
-      },
-      {
-        path: 'thankyou',
-        Component: ThankYou,
-      },
-      {
-        path: '404',
-        Component: NotFound,
-      },
-      {
-        path: '*',
-        Component: NotFound,
-      },
-    ],
-  },
-]);
-const Routes = () => (
+const Router = () => (
   <ThemeProvider theme={theme}>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home/>}/>
+        <Route path='login' element={<Login/>}/>
+        <Route path='register' element={<Registration/>}/>
+        <Route path='cart' element={<Cart/>}/>
+        <Route path='checkout' element={<Checkout/>}/>
+        <Route path='thankyou' element={<ThankYou/>}/>
+        <Route path='products'>
+          <Route index element={<Products/>}/>
+          <Route path=':product' element={<ProductDetails/>}/>
+        </Route>
+        <Route path='*' element={<NotFound/>}/>
+        <Route path='404' element={<NotFound/>}/>
+      </Routes>
+    </BrowserRouter>
   </ThemeProvider>
 );
 
-export default Routes;
+
+export default Router;
