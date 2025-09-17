@@ -5,7 +5,7 @@ import { StyledProductCard } from './styles';
 import { displayPrice } from '../../helpers/sanitizeData';
 import { addNewItem, removeItem } from '../../helpers/cartHelpers';
 
-const ProductCard = ({ idx, title, info, price, image, description }) => {
+const ProductCard = ({ idx, title, info, price, image }) => {
   const { cart, setCart, userData } = useContext(MyContext);
 
   return (
@@ -15,13 +15,6 @@ const ProductCard = ({ idx, title, info, price, image, description }) => {
       <NavLink
         className='product-card-clickable'
         to={`${title}`}
-        state={{
-          title,
-          price,
-          image,
-          description,
-          idx,
-        }}
       >
         {info} &amp; more...
       </NavLink>

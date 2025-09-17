@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
-import { ThemeProvider } from 'styled-components';
-import theme from './styles/theme';
 import Home from './components/Home';
 import Login from './components/LoginRegistration/Login';
 import Registration from './components/LoginRegistration/Registration';
@@ -13,7 +11,6 @@ import NotFound from './components/NotFound';
 import ThankYou from './components/ThankYou';
 
 const Router = () => (
-  <ThemeProvider theme={theme}>
     <BrowserRouter>
       <Routes>
         <Route index element={<Home/>}/>
@@ -30,7 +27,6 @@ const Router = () => (
         <Route path='404' element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
-  </ThemeProvider>
 );
 
 

@@ -1,15 +1,17 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../styles/theme';
 import MyProvider from '../context/MyProvider';
-import FetchData from '../FetchData';
 import Router from '../Routes';
 
 const BuyByeBuy = () => {
-	return (
-		<MyProvider>
-			<FetchData />
-			<Router />
-		</MyProvider>
-	)
-}
+  return (
+    <MyProvider>
+      <ThemeProvider theme={theme}>
+        <Router />
+      </ThemeProvider>
+    </MyProvider>
+  );
+};
 
 export default BuyByeBuy;
