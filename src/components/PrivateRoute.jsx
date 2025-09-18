@@ -10,7 +10,6 @@ const PrivateRoute = ({ component: Component, redirectTo }) => {
     navigate(redirectTo)
   } else {
     return <Component/>
-
   }
   
 ;

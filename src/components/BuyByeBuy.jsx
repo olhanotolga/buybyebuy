@@ -1,15 +1,20 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../styles/theme';
 import MyProvider from '../context/MyProvider';
-import FetchData from '../FetchData';
-import Routes from '../Routes';
+import Router from '../Routes';
+import ErrorBoundary from '../ErrorBoundary';
 
 const BuyByeBuy = () => {
-	return (
-		<MyProvider>
-			<FetchData />
-			<Routes />
-		</MyProvider>
-	)
-}
+  return (
+    <ErrorBoundary>
+    <MyProvider>
+      <ThemeProvider theme={theme}>
+        <Router />
+      </ThemeProvider>
+    </MyProvider>
+    </ErrorBoundary>
+  );
+};
 
 export default BuyByeBuy;

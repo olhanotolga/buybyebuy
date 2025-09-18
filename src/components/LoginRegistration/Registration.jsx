@@ -5,7 +5,7 @@ import React, {
   useState,
   useReducer,
 } from 'react';
-import { redirect } from 'react-router';
+import { useNavigate } from 'react-router';
 import Header from '../Header';
 import MyContext from '../../context/MyContext';
 import { signupErrorReducer } from '../../reducers/signupErrorReducer';
@@ -17,6 +17,7 @@ const Registration = () => {
   const [error, dispatchError] = useReducer(signupErrorReducer, '');
   const [confirmPW, setConfirmPW] = useState('');
   const focusField = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     focusField.current.focus();
@@ -38,11 +39,8 @@ const Registration = () => {
     if (userData.password !== confirmPW)
       return handleInputError('DISPLAY_MISMATCH');
     dispatchError('DISPLAY_NULL');
+    navigate('/products');
   };
-
-  if (!error && error !== '') {
-    throw redirect('/products');
-  }
 
   return (
     <StyledRegistrationPage>

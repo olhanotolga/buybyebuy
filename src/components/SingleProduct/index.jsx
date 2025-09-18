@@ -1,49 +1,36 @@
 import React, { useContext } from 'react';
+import { useParams } from 'react-router';
 import Header from '../Header';
 import Footer from '../Footer';
-import { Link, useNavigate, useLocation, redirect } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import MyContext from '../../context/MyContext';
 import StyledProductPage from './styles';
 import { Button } from '../../styles/globalStyles';
 import { displayPrice } from '../../helpers/sanitizeData';
 import { addNewItem } from '../../helpers/cartHelpers';
+import NotFound from '../NotFound';
 
 const ProductDetails = () => {
-  const { products, qty, cart, setCart, userData } = useContext(MyContext);
-  console.log({ products, qty, cart, setCart, userData });
-
+  const params = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
 
-  console.log({ location });
+  const { products, qty, cart, setCart, userData } = useContext(MyContext);
 
   if (products.length === 0) return null;
 
   const displayedProduct = products.find((product) => {
-    return product.title === location.state.title;
+    return product.title === params.product;
   });
-  console.log({ displayedProduct });
+
+  // handle redirect if the product is not found
+
   if (!displayedProduct) {
-    redirect('/404');
+    return <NotFound />;
   }
 
   // The product is defined either by URL params or by the item clicked on the Products page:
 
-  let title, description, image, price, idx;
-
-  if (location.state) {
-    title = location.state.title;
-    description = location.state.description;
-    image = location.state.image;
-    price = location.state.price;
-    idx = location.state.idx;
-  } else {
-    title = displayedProduct.title[0];
-    description = displayedProduct.description[0];
-    image = displayedProduct.image[0];
-    price = displayedProduct.price[0];
-    idx = displayedProduct.id;
-  }
+  const { title, description, image, price, id } = displayedProduct;
 
   return (
     <StyledProductPage>
@@ -64,13 +51,13 @@ const ProductDetails = () => {
         <h2 className='product-title'>{title}</h2>
         <p className='product-description'>{description}</p>
         <div className='product-btns'>
-          <Button className='back' onClick={() => navigate(-1)}>
+          <Button className='back' onClick={() => navigate('/products')}>
             Back
           </Button>
           <Button
             className='buy'
             onClick={() =>
-              addNewItem(userData, cart, setCart, idx, title, price)
+              addNewItem(userData, cart, setCart, id, title, price)
             }
           >
             <span>Buy</span>
