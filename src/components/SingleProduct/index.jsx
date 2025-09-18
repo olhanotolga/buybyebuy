@@ -51,7 +51,7 @@ const ProductDetails = () => {
         <h2 className='product-title'>{title}</h2>
         <p className='product-description'>{description}</p>
         <div className='product-btns'>
-          <Button className='back' onClick={() => navigate(-1)}>
+          <Button className='back' onClick={() => navigate('/products')}>
             Back
           </Button>
           <Button
