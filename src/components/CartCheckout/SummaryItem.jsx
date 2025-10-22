@@ -1,4 +1,3 @@
-import React from 'react';
 import {StylesForCartSummaryItem, StylesForCheckoutSummaryItem} from './styles';
 import { displayPrice } from '../../helpers/sanitizeData';
 

@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const { type } = require('os');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -21,10 +20,9 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'esbuild-loader',
-        options: {
-          loader: 'jsx',
-          target: 'es2015',
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
         },
       },
       {
