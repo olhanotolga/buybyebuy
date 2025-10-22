@@ -6,6 +6,7 @@ import { StyledLoginPage } from './styles';
 import { loginErrorReducer } from '../../reducers/loginErrorReducer';
 import { ACTION_TYPES } from '../../reducers/userReducer';
 import { Button } from '../../styles/globalStyles';
+import { initialUserState } from '../../data/userState';
 
 const Login = () => {
   const { users, userData, dispatch: dispatchUser } = useUserContext();
