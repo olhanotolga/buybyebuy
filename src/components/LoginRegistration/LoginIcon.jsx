@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LoginIcon = () => {
 	return (
 		<svg className="login-icon-hp" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 767.999994" version="1.2">

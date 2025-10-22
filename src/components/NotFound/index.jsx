@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from '../../styles/globalStyles';
 import Header from '../Header';
