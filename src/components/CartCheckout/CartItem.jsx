@@ -1,12 +1,13 @@
-import React, {useContext} from 'react';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import {StylesForCartItem, StylesForCheckoutItem} from './styles';
 import { displayPrice } from '../../helpers/sanitizeData';
 import { addNewItem, removeItem } from '../../helpers/cartHelpers';
 
 
 const CartItem = ({title, amount, price, addRemove, idx}) => {
-	const {userData, cart, setCart} = useContext(MyContext);
+	const { userData } = useUserContext();
+	const { cart, setCart } = useProductsContext();
 
 	return (
 		<>

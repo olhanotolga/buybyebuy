@@ -1,19 +1,18 @@
-import React, {
+import {
   useRef,
   useEffect,
-  useContext,
   useState,
   useReducer,
 } from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../Header';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
 import { signupErrorReducer } from '../../reducers/signupErrorReducer';
 import { StyledRegistrationPage } from './styles';
 import { Button } from '../../styles/globalStyles';
 
 const Registration = () => {
-  const { userData, setUserData } = useContext(MyContext);
+  const { userData, setUserData } = useUserContext();
   const [error, dispatchError] = useReducer(signupErrorReducer, '');
   const [confirmPW, setConfirmPW] = useState('');
   const focusField = useRef();

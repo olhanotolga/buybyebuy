@@ -1,11 +1,13 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { redirect } from 'react-router';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import StyledFooter from './styles';
 import { displayGreeting } from '../../helpers/greet';
 
 const Footer = ({ className }) => {
-  const { userData, reset } = useContext(MyContext);
+  const { userData, resetUser } = useUserContext();
+  const { resetCart } = useProductsContext();
 
   const [address, setAddress] = useState('');
 
@@ -16,7 +18,8 @@ const Footer = ({ className }) => {
 
   const logOut = () => {
     if (userData.username !== '') {
-      reset();
+      resetUser();
+      resetCart();
       redirect('/login');
     }
   };

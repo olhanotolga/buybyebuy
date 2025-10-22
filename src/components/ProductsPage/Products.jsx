@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
 import { Link } from 'react-router';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import ProductCard from './ProductCard';
 import Header from '../Header';
 import Footer from '../Footer';
 import { StyledProductsPage } from './styles';
 
 const Products = () => {
-  const { userData, products, qty } = useContext(MyContext);
+  const { userData } = useUserContext();
+  const { products, qty } = useProductsContext();
 
   return (
     <StyledProductsPage className='products-page'>

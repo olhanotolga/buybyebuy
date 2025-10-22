@@ -1,13 +1,13 @@
-import React, { useContext, useRef, useEffect, useReducer } from 'react';
+import { useRef, useEffect, useReducer } from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../Header';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
 import { StyledLoginPage } from './styles';
 import { loginErrorReducer } from '../../reducers/loginErrorReducer';
 import { Button } from '../../styles/globalStyles';
 
 const Login = () => {
-  const { users, userData, setUserData } = useContext(MyContext);
+  const { users, userData, setUserData } = useUserContext();
   const [error, dispatchError] = useReducer(loginErrorReducer, '');
   const focusField = useRef();
   const navigate = useNavigate();

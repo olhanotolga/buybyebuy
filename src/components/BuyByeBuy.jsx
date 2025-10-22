@@ -1,17 +1,20 @@
 import { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
-import MyProvider from '../context/MyProvider';
+import UserProvider from '../context/UserContext';
+import ProductsProvider from '../context/ProductsContext';
 import Router from '../Routes';
 import ErrorBoundary from '../ErrorBoundary';
 
 const BuyByeBuy = () => {
   return (
     <ErrorBoundary>
-    <MyProvider>
       <ThemeProvider theme={theme}>
-        <Router />
+        <UserProvider>
+          <ProductsProvider>
+            <Router />
+          </ProductsProvider>
+        </UserProvider>
       </ThemeProvider>
-    </MyProvider>
     </ErrorBoundary>
   );
 };
