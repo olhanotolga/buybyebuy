@@ -1,13 +1,20 @@
-import { useRef, useEffect, useReducer } from 'react';
+import { useRef, useEffect, useReducer, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../Header';
 import { useUserContext } from '../../context/UserContext';
 import { StyledLoginPage } from './styles';
 import { loginErrorReducer } from '../../reducers/loginErrorReducer';
+import { ACTION_TYPES } from '../../reducers/userReducer';
 import { Button } from '../../styles/globalStyles';
+import { initialUserState } from '../../data/userState';
 
 const Login = () => {
-  const { users, userData, setUserData } = useUserContext();
+  const { users, userData, dispatch: dispatchUser } = useUserContext();
+  const [currentUser, setCurrentUser] = useState(() => {
+    return userData.username && userData.password
+      ? userData
+      : initialUserState.userData;
+  });
   const [error, dispatchError] = useReducer(loginErrorReducer, '');
   const focusField = useRef();
   const navigate = useNavigate();
@@ -17,21 +24,27 @@ const Login = () => {
   }, []);
 
   const handleInputChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    setCurrentUser({ ...currentUser, [e.target.name]: e.target.value });
   };
 
   const handleInputError = (dispatcher) => {
     dispatchError(dispatcher);
-    setUserData({ username: '', password: '' });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (users[userData.username] === userData.password) {
+    if (users[currentUser.username] === currentUser.password) {
       dispatchError('DISPLAY_NULL');
+      dispatchUser({
+        type: ACTION_TYPES.LOGGED_IN,
+        payload: {
+          username: currentUser.username,
+          password: currentUser.password,
+        },
+      });
       navigate('/products');
-    } else if (userData.username === '' || userData.password === '') {
+    } else if (currentUser.username === '' || currentUser.password === '') {
       handleInputError('DISPLAY_EMPTY');
     } else {
       handleInputError('DISPLAY_MISMATCH');
@@ -39,7 +52,15 @@ const Login = () => {
   };
 
   const fillGuestUserData = () => {
-    setUserData({ username: 'admin', password: 'iamtheboss' });
+    const adminUser = {
+      username: 'admin',
+      password: initialUserState.users['admin'],
+    };
+    dispatchUser({
+      type: ACTION_TYPES.LOGGED_IN,
+      payload: adminUser,
+    });
+    setCurrentUser(adminUser);
   };
 
   return (
@@ -55,9 +76,10 @@ const Login = () => {
         <input
           type='text'
           name='username'
+          required
           placeholder='username'
           id='usernameLogin'
-          value={userData.username}
+          value={currentUser.username}
           onChange={handleInputChange}
           ref={focusField}
         />
@@ -65,9 +87,10 @@ const Login = () => {
         <input
           type='password'
           name='password'
+          required
           placeholder='password'
           id='passwordLogin'
-          value={userData.password}
+          value={currentUser.password}
           onChange={handleInputChange}
         />
         <Button>Log in</Button>

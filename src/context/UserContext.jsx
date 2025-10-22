@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useReducer } from 'react';
+import { userReducer, ACTION_TYPES } from '../reducers/userReducer';
+import {initialUserState} from '../data/userState';
 
 const UserContext = createContext(null);
 
@@ -7,20 +9,18 @@ export function useUserContext() {
 }
 
 function UserProvider({ children }) {
-  const users = {
-    admin: 'iamtheboss',
-    olhanotolga: 'bestpassword',
-  };
+  const [userState, dispatch] = useReducer(userReducer, initialUserState);
 
-  const [userData, setUserData] = useState({ username: '', password: '' });
   const resetUser = () => {
-    setUserData({ username: '', password: '' });
+    dispatch({
+      type: ACTION_TYPES.LOGGED_OUT
+    })
   };
 
   const userContextValue = {
-    users,
-    userData,
-    setUserData,
+    users: userState.users,
+    userData: userState.userData,
+    dispatch,
     resetUser,
   };
   return <UserContext value={userContextValue}>{children}</UserContext>;
