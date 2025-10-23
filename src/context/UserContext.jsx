@@ -1,6 +1,16 @@
 import { createContext, useContext, useReducer } from 'react';
 import { userReducer, ACTION_TYPES } from '../reducers/userReducer';
-import {initialUserState} from '../data/userState';
+
+export const initialUserState = {
+  users: {
+    admin: 'iamtheboss',
+    olhanotolga: 'bestpassword',
+  },
+  userData: {
+    username: '',
+    password: '',
+  },
+};
 
 const UserContext = createContext(null);
 

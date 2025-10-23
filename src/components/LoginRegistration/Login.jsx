@@ -1,12 +1,11 @@
 import { useRef, useEffect, useReducer, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../Header';
-import { useUserContext } from '../../context/UserContext';
+import { useUserContext, initialUserState } from '../../context/UserContext';
 import { StyledLoginPage } from './styles';
 import { loginErrorReducer } from '../../reducers/loginErrorReducer';
 import { ACTION_TYPES } from '../../reducers/userReducer';
 import { Button } from '../../styles/globalStyles';
-import { initialUserState } from '../../data/userState';
 
 const Login = () => {
   const { users, userData, dispatch: dispatchUser } = useUserContext();
