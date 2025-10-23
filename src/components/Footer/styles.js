@@ -6,9 +6,11 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
 
   ${(props) =>
-    props.$isLoggedIn &&
-    `.logout-icon {
+    `.logout-login-icon {
 			cursor: pointer;
+      border: none;
+      background-color: ${props.theme.colors.dark};
+      color: ${props.theme.colors.light};
 
 			&:hover {
 				text-shadow: 0.07rem -0.03rem ${props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props.theme.colors.contrastTwo};
