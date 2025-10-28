@@ -55,15 +55,17 @@ const ProductDetails = () => {
           <Button className='back' onClick={() => navigate('/products')}>
             Back
           </Button>
-          <Button
-            className='buy'
-            onClick={() =>
-              addNewItem(userData, cart, setCart, id, title, price)
-            }
-          >
-            <span>Buy</span>
-            <span className='price'>{displayPrice(price)}&curren;</span>
-          </Button>
+          {userData?.username !== '' && (
+            <Button
+              className='buy'
+              onClick={() =>
+                addNewItem(userData, cart, setCart, id, title, price)
+              }
+            >
+              <span>Buy</span>
+              <span className='price'>{displayPrice(price)}&curren;</span>
+            </Button>
+          )}
         </div>
       </section>
       <Footer />

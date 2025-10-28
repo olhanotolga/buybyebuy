@@ -17,20 +17,24 @@ const ProductCard = ({ idx, title, info, price, image }) => {
         {info} &amp; more...
       </NavLink>
       <span className='product-card-price'>{displayPrice(price)}&curren;</span>
-      <div className='product-card-add-remove'>
-        <span
-          className='material-icons'
-          onClick={() => addNewItem(userData, cart, setCart, idx, title, price)}
-        >
-          add_circle_outline
-        </span>
-        <span
-          className='material-icons'
-          onClick={() => removeItem(userData, cart, setCart, idx)}
-        >
-          remove_circle_outline
-        </span>
-      </div>
+      {userData?.username !== '' && (
+        <div className='product-card-add-remove'>
+          <span
+            className='material-icons'
+            onClick={() =>
+              addNewItem(userData, cart, setCart, idx, title, price)
+            }
+          >
+            add_circle_outline
+          </span>
+          <span
+            className='material-icons'
+            onClick={() => removeItem(userData, cart, setCart, idx)}
+          >
+            remove_circle_outline
+          </span>
+        </div>
+      )}
     </StyledProductCard>
   );
 };
