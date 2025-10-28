@@ -16,7 +16,6 @@ export function userReducer(state, action) {
     },
     userData: {
       username: '',
-      password: '',
     },
   };
 
@@ -33,18 +32,20 @@ export function userReducer(state, action) {
         users: { ...state.users },
         userData: {
           username: payload.username,
-          password: payload.password,
         },
       };
     }
     case ACTION_TYPES.SIGNED_UP: {
       return {
         users: { ...state.users, [payload.username]: payload.password },
-        userData: { username: payload.username, password: payload.password },
+        userData: { username: payload.username },
       };
     }
     case ACTION_TYPES.LOGGED_OUT: {
-      return initialUserState;
+      return {
+        users: state.users,
+        userData: initialUserState.userData,
+      };
     }
     default: {
       throw new Error('Unrecognized user action!');

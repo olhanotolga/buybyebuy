@@ -39,7 +39,6 @@ const Login = () => {
         type: ACTION_TYPES.LOGGED_IN,
         payload: {
           username: currentUser.username,
-          password: currentUser.password,
         },
       });
       navigate('/products');

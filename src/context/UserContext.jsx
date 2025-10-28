@@ -8,19 +8,13 @@ export const initialUserState = {
   },
   userData: {
     username: '',
-    password: '',
   },
 };
 
 function getInitialUserState() {
   try {
     const userStateLS = localStorage.getItem('userState');
-    return userStateLS
-      ? {
-          users: initialUserState.users,
-          userData: JSON.parse(userStateLS),
-        }
-      : initialUserState;
+    return userStateLS ? JSON.parse(userStateLS) : initialUserState;
   } catch (err) {
     console.error(err);
     return initialUserState;
@@ -41,15 +35,9 @@ function UserProvider({ children }) {
   );
 
   useEffect(() => {
-    const { username, password } = userState.userData;
-    if (username && username !== '' && password && password !== '') {
-      localStorage.setItem(
-        'userState',
-        JSON.stringify({
-          username,
-          password,
-        })
-      );
+    const { username } = userState.userData;
+    if (username && username !== '') {
+      localStorage.setItem('userState', JSON.stringify(userState));
     }
   }, [userState.userData]);
 
@@ -57,7 +45,13 @@ function UserProvider({ children }) {
     dispatch({
       type: ACTION_TYPES.LOGGED_OUT,
     });
-    localStorage.removeItem('userState');
+    localStorage.setItem(
+      'userState',
+      JSON.stringify({
+        ...userState,
+        userData: { username: '' },
+      })
+    );
   };
 
   const userContextValue = {
