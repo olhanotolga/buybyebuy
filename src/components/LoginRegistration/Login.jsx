@@ -10,8 +10,10 @@ import { Button } from '../../styles/globalStyles';
 const Login = () => {
   const { users, userData, dispatch: dispatchUser } = useUserContext();
   const [currentUser, setCurrentUser] = useState(() => {
-    return userData.username && userData.password
-      ? userData
+    return userData.username
+      ? {username: userData.username,
+        password: users[userData.username]
+      }
       : initialUserState.userData;
   });
   const [error, dispatchError] = useReducer(loginErrorReducer, '');
