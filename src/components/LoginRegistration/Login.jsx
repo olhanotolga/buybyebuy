@@ -55,10 +55,6 @@ const Login = () => {
       username: 'admin',
       password: initialUserState.users['admin'],
     };
-    dispatchUser({
-      type: ACTION_TYPES.LOGGED_IN,
-      payload: adminUser,
-    });
     setCurrentUser(adminUser);
   };
 
