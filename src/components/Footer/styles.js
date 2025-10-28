@@ -4,13 +4,13 @@ const StyledFooter = styled.footer`
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
 
   ${(props) =>
     `.logout-login-icon {
 			cursor: pointer;
       border: none;
-      background-color: ${props.theme.colors.dark};
-      color: ${props.theme.colors.light};
+      background-color: transparent;
 
 			&:hover {
 				text-shadow: 0.07rem -0.03rem ${props.theme.colors.contrastOne}, -0.07rem 0.03rem ${props.theme.colors.contrastTwo};
