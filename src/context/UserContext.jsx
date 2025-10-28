@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 import { userReducer, ACTION_TYPES } from '../reducers/userReducer';
 
 export const initialUserState = {
@@ -12,6 +12,21 @@ export const initialUserState = {
   },
 };
 
+function getInitialUserState() {
+  try {
+    const userStateLS = localStorage.getItem('userState');
+    return userStateLS
+      ? {
+          users: initialUserState.users,
+          userData: JSON.parse(userStateLS),
+        }
+      : initialUserState;
+  } catch (err) {
+    console.error(err);
+    return initialUserState;
+  }
+}
+
 const UserContext = createContext(null);
 
 export function useUserContext() {
@@ -19,12 +34,30 @@ export function useUserContext() {
 }
 
 function UserProvider({ children }) {
-  const [userState, dispatch] = useReducer(userReducer, initialUserState);
+  const [userState, dispatch] = useReducer(
+    userReducer,
+    initialUserState,
+    getInitialUserState
+  );
+
+  useEffect(() => {
+    const { username, password } = userState.userData;
+    if (username && username !== '' && password && password !== '') {
+      localStorage.setItem(
+        'userState',
+        JSON.stringify({
+          username,
+          password,
+        })
+      );
+    }
+  }, [userState.userData]);
 
   const resetUser = () => {
     dispatch({
-      type: ACTION_TYPES.LOGGED_OUT
-    })
+      type: ACTION_TYPES.LOGGED_OUT,
+    });
+    localStorage.removeItem('userState');
   };
 
   const userContextValue = {
