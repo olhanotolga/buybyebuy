@@ -1,9 +1,4 @@
-import {
-  useRef,
-  useEffect,
-  useState,
-  useReducer,
-} from 'react';
+import { useRef, useEffect, useState, useReducer } from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../Header';
 import { useUserContext } from '../../context/UserContext';
@@ -15,8 +10,10 @@ import { Button } from '../../styles/globalStyles';
 const Registration = () => {
   const { userData, dispatch: dispatchUser } = useUserContext();
   const [currentUser, setCurrentUser] = useState({
-      username: '', password: '', confirmPW: ''
-    });
+    username: '',
+    password: '',
+    confirmPW: '',
+  });
   const [error, dispatchError] = useReducer(signupErrorReducer, '');
   const focusField = useRef();
   const navigate = useNavigate();
@@ -34,18 +31,20 @@ const Registration = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (currentUser.username === '') return handleInputError('DISPLAY_EMPTY_UN');
-    if (currentUser.password === '') return handleInputError('DISPLAY_EMPTY_PW');
+    if (currentUser.username === '')
+      return handleInputError('DISPLAY_EMPTY_UN');
+    if (currentUser.password === '')
+      return handleInputError('DISPLAY_EMPTY_PW');
     if (currentUser.password !== currentUser.confirmPW)
       return handleInputError('DISPLAY_MISMATCH');
     dispatchError('DISPLAY_NULL');
     dispatchUser({
-        type: ACTION_TYPES.SIGNED_UP,
-        payload: {
-          username: currentUser.username,
-          password: currentUser.password,
-        },
-      });
+      type: ACTION_TYPES.SIGNED_UP,
+      payload: {
+        username: currentUser.username,
+        password: currentUser.password,
+      },
+    });
     navigate('/products');
   };
 
@@ -63,7 +62,7 @@ const Registration = () => {
           id='usernameRegist'
           placeholder='username'
           required
-          value={userData.username}
+          value={currentUser.username}
           onChange={handleInputChange}
           ref={focusField}
         />
@@ -74,7 +73,7 @@ const Registration = () => {
           id='passwordRegist'
           placeholder='password'
           required
-          value={userData.password}
+          value={currentUser.password}
           onChange={handleInputChange}
         />
         <label htmlFor='confirmPassword'>Password again</label>
@@ -83,7 +82,7 @@ const Registration = () => {
           name='confirmPW'
           id='confirmPassword'
           placeholder='password again'
-          value={confirmPW}
+          value={currentUser.confirmPW}
           onChange={handleInputChange}
         />
         <Button>Sign up</Button>
