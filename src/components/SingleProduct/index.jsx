@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
 import { useParams } from 'react-router';
 import Header from '../Header';
 import Footer from '../Footer';
 import { Link, useNavigate } from 'react-router';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import StyledProductPage from './styles';
 import { Button } from '../../styles/globalStyles';
 import { displayPrice } from '../../helpers/sanitizeData';
@@ -14,7 +14,8 @@ const ProductDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const { products, qty, cart, setCart, userData } = useContext(MyContext);
+  const { userData } = useUserContext();
+  const { products, qty, cart, setCart } = useProductsContext();
 
   if (products.length === 0) return null;
 
@@ -54,15 +55,17 @@ const ProductDetails = () => {
           <Button className='back' onClick={() => navigate('/products')}>
             Back
           </Button>
-          <Button
-            className='buy'
-            onClick={() =>
-              addNewItem(userData, cart, setCart, id, title, price)
-            }
-          >
-            <span>Buy</span>
-            <span className='price'>{displayPrice(price)}&curren;</span>
-          </Button>
+          {userData?.username !== '' && (
+            <Button
+              className='buy'
+              onClick={() =>
+                addNewItem(userData, cart, setCart, id, title, price)
+              }
+            >
+              <span>Buy</span>
+              <span className='price'>{displayPrice(price)}&curren;</span>
+            </Button>
+          )}
         </div>
       </section>
       <Footer />

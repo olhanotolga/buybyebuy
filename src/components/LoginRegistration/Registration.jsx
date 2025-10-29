@@ -1,21 +1,20 @@
-import React, {
-  useRef,
-  useEffect,
-  useContext,
-  useState,
-  useReducer,
-} from 'react';
+import { useRef, useEffect, useState, useReducer } from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../Header';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
 import { signupErrorReducer } from '../../reducers/signupErrorReducer';
+import { ACTION_TYPES } from '../../reducers/userReducer';
 import { StyledRegistrationPage } from './styles';
 import { Button } from '../../styles/globalStyles';
 
 const Registration = () => {
-  const { userData, setUserData } = useContext(MyContext);
+  const { userData, dispatch: dispatchUser } = useUserContext();
+  const [currentUser, setCurrentUser] = useState({
+    username: '',
+    password: '',
+    confirmPW: '',
+  });
   const [error, dispatchError] = useReducer(signupErrorReducer, '');
-  const [confirmPW, setConfirmPW] = useState('');
   const focusField = useRef();
   const navigate = useNavigate();
 
@@ -24,21 +23,28 @@ const Registration = () => {
   }, []);
 
   const handleInputChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    setCurrentUser({ ...currentUser, [e.target.name]: e.target.value });
   };
   const handleInputError = (dispatcher) => {
     dispatchError(dispatcher);
-    setUserData({ username: '', password: '' });
-    setConfirmPW('');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userData.username === '') return handleInputError('DISPLAY_EMPTY_UN');
-    if (userData.password === '') return handleInputError('DISPLAY_EMPTY_PW');
-    if (userData.password !== confirmPW)
+    if (currentUser.username === '')
+      return handleInputError('DISPLAY_EMPTY_UN');
+    if (currentUser.password === '')
+      return handleInputError('DISPLAY_EMPTY_PW');
+    if (currentUser.password !== currentUser.confirmPW)
       return handleInputError('DISPLAY_MISMATCH');
     dispatchError('DISPLAY_NULL');
+    dispatchUser({
+      type: ACTION_TYPES.SIGNED_UP,
+      payload: {
+        username: currentUser.username,
+        password: currentUser.password,
+      },
+    });
     navigate('/products');
   };
 
@@ -55,7 +61,8 @@ const Registration = () => {
           name='username'
           id='usernameRegist'
           placeholder='username'
-          value={userData.username}
+          required
+          value={currentUser.username}
           onChange={handleInputChange}
           ref={focusField}
         />
@@ -65,7 +72,8 @@ const Registration = () => {
           name='password'
           id='passwordRegist'
           placeholder='password'
-          value={userData.password}
+          required
+          value={currentUser.password}
           onChange={handleInputChange}
         />
         <label htmlFor='confirmPassword'>Password again</label>
@@ -74,8 +82,8 @@ const Registration = () => {
           name='confirmPW'
           id='confirmPassword'
           placeholder='password again'
-          value={confirmPW}
-          onChange={(e) => setConfirmPW(e.target.value)}
+          value={currentUser.confirmPW}
+          onChange={handleInputChange}
         />
         <Button>Sign up</Button>
       </form>

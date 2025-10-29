@@ -1,11 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { redirect } from 'react-router';
-import MyContext from '../../context/MyContext';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import { useUserContext } from '../../context/UserContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import StyledFooter from './styles';
 import { displayGreeting } from '../../helpers/greet';
 
 const Footer = ({ className }) => {
-  const { userData, reset } = useContext(MyContext);
+  const navigate = useNavigate();
+  const { userData, resetUser } = useUserContext();
+  const { resetCart } = useProductsContext();
 
   const [address, setAddress] = useState('');
 
@@ -16,22 +19,26 @@ const Footer = ({ className }) => {
 
   const logOut = () => {
     if (userData.username !== '') {
-      reset();
-      redirect('/login');
+      resetUser();
+      resetCart();
+    }
+  };
+  const logIn = () => {
+    if (userData.username === '') {
+      navigate('/login');
     }
   };
 
   return (
     <StyledFooter
-      $isLoggedIn={userData.username !== '' ? true : false}
       className={className}
     >
       <span>
         {userData.username ? address + userData.username : 'not logged in'}
       </span>
-      <span onClick={logOut} className='material-icons logout-icon'>
-        logout
-      </span>
+        <button onClick={userData.username !== '' ? logOut : logIn} className='material-icons logout-login-icon'>
+        {userData.username !== '' ? 'logout' : 'login'}
+      </button>
     </StyledFooter>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, Link } from 'react-router';
 import Header from '../Header';
 import Footer from '../Footer';
@@ -6,7 +6,7 @@ import PrivateRoute from '../PrivateRoute';
 import { StyledCart } from './styles';
 import { StyledCartItem } from './CartItem';
 import { StyledCartSummaryItem } from './SummaryItem';
-import MyContext from '../../context/MyContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import { Button } from '../../styles/globalStyles';
 
 const Cart = () => {
@@ -15,7 +15,7 @@ const Cart = () => {
 
 const CartComponent = () => {
   const { cart, setSubtotal, subtotal, setQty, setShipping } =
-    useContext(MyContext);
+    useProductsContext();
   const navigate = useNavigate();
 
   useEffect(() => {

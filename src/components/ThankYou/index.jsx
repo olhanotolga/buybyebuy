@@ -1,17 +1,20 @@
-import React, { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from '../../styles/globalStyles';
-import MyContext from '../../context/MyContext';
+import { useUserContext } from '../../context/UserContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import Header from '../Header';
 import ReplayIcon from './ReplayIcon';
 import StyledTY from './styles';
 
 const ThankYou = () => {
-  const { reset } = useContext(MyContext);
+  const { resetUser } = useUserContext();
+  const { resetCart } = useProductsContext();
   const navigate = useNavigate();
 
   useEffect(() => {
-    reset();
+    resetUser();
+    resetCart();
   }, []);
 
   return (

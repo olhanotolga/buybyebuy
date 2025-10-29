@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
-import MyContext from './MyContext';
+import { createContext, useContext, useState } from 'react';
 import data from '../data/products.json';
 
-const MyProvider = (props) => {
-  // products-related data
+const ProductsContext = createContext(null);
 
-  const [products, setProducts] = useState(data.products);
+export function useProductsContext() {
+  return useContext(ProductsContext);
+}
 
-  // user-related data
-
-  const users = {
-    admin: 'iamtheboss',
-    olhanotolga: 'bestpassword',
-  };
-
-  const [userData, setUserData] = useState({ username: '', password: '' });
+function ProductsProvider({ children }) {
+  const [products, setProducts] = useState(() => {
+    return data.products;
+  });
 
   // shopping cart
 
@@ -26,23 +22,19 @@ const MyProvider = (props) => {
 
   // FUNCTIONS
 
-  const reset = () => {
+  const resetCart = () => {
     setCart({});
     setQty(0);
     setSubtotal(0);
     setShipping(0);
     setTotal(0);
-    setUserData({ username: '', password: '' });
   };
 
   return (
-    <MyContext.Provider
+    <ProductsContext
       value={{
         products,
         setProducts,
-        users,
-        userData,
-        setUserData,
         cart,
         setCart,
         qty,
@@ -53,12 +45,12 @@ const MyProvider = (props) => {
         setShipping,
         total,
         setTotal,
-        reset,
+        resetCart,
       }}
     >
-      {props.children}
-    </MyContext.Provider>
+      {children}
+    </ProductsContext>
   );
-};
+}
 
-export default MyProvider;
+export default ProductsProvider;

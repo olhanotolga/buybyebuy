@@ -1,10 +1,10 @@
-import React, { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import StyledHeader from './styles';
-import MyContext from '../../context/MyContext';
+import {useProductsContext} from '../../context/ProductsContext';
 
 const Header = ({className, title, subtitle, icon, children}) => {
 
-	const {setQty, cart} = useContext(MyContext);
+	const {setQty, cart} = useProductsContext();
 
 	useEffect(() => {
 		setQty(

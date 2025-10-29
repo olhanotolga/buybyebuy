@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import Header from '../Header';
 import Footer from '../Footer';
 import PrivateRoute from '../PrivateRoute';
-import MyContext from '../../context/MyContext';
+import { useProductsContext } from '../../context/ProductsContext';
 import { StyledCheckout } from './styles';
 import { StyledCheckoutItem } from './CartItem';
 import { StyledCheckoutSummaryItem } from './SummaryItem';
@@ -15,8 +15,8 @@ const Checkout = () => {
 };
 
 const CheckoutComponent = () => {
-  const { cart, subtotal, shipping, total, setTotal, reset } =
-    useContext(MyContext);
+  const { cart, subtotal, shipping, total, setTotal } =
+    useProductsContext();
   const navigate = useNavigate();
 
   useEffect(() => {
