@@ -22,6 +22,14 @@ const Products = () => {
             {qty}
           </Link>
         )}
+        <aside aria-live='polite'>
+          {userData.username === '' && (
+            <p>
+              <span className='material-symbols-outlined'>person_alert</span>
+              Log in to purchase items
+            </p>
+          )}
+        </aside>
       </Header>
 
       <section className='products-display'>
