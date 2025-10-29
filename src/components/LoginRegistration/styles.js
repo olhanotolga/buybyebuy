@@ -24,7 +24,7 @@ export const StyledLoginPage = styled(PageMain)`
       height: 2.5rem;
       align-content: center;
 
-      .material-icons {
+      .material-symbols-outlined {
         vertical-align: bottom;
       }
     }

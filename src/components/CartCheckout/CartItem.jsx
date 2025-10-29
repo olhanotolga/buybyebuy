@@ -20,7 +20,7 @@ const CartItem = ({title, amount, price, addRemove, idx}) => {
 			</span>
 
 			{addRemove && 
-				<span className="item-add material-icons"
+				<span className="item-add material-symbols-outlined"
 				onClick={() => addNewItem(userData, cart, setCart, idx, title, price)}>add_circle_outline</span>
 			}
 
@@ -30,7 +30,7 @@ const CartItem = ({title, amount, price, addRemove, idx}) => {
 			</span>
 			
 			{addRemove && 
-				<span className="item-remove material-icons"
+				<span className="item-remove material-symbols-outlined"
 				onClick={() => removeItem(userData, cart, setCart, idx)}>remove_circle_outline</span>
 			}
 

@@ -4,7 +4,7 @@ const CartIcon = (props) => {
 	const history = useHistory();
 
 	return (
-			<span className="material-icons"
+			<span className="material-symbols-outlined"
 			onClick={() => history.push('/cart')}>
 					{props.icon}
 			</span>

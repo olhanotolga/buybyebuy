@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
 		font-size: calc(1rem + 3vmin);
 	}
 
-	.material-icons {
+  .material-symbols-outlined {
 		font-size: calc(1rem + 3vmin);
 		margin-left: auto;
 	}

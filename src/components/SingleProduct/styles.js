@@ -8,7 +8,7 @@ const StyledProductPage = styled(PageMain)`
     background-color: ${(props) => props.theme.colors.light};
     color: ${(props) => props.theme.colors.dark};
 
-    .material-icons {
+    .material-symbols-outlined {
       color: ${(props) => props.theme.colors.dark};
     }
   }
