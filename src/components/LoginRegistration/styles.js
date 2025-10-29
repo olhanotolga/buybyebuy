@@ -34,6 +34,7 @@ export const StyledLoginPage = styled(PageMain)`
       padding: 0.5rem 1rem;
       background-color: ${(props) => props.theme.colors.dark};
       color: ${(props) => props.theme.colors.contrastThree};
+      border-radius: ${(props) => props.theme.radius.normal};
     }
     input::placeholder {
       color: ${(props) => props.theme.colors.contrastTwo};
