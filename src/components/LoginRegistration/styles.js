@@ -20,8 +20,13 @@ export const StyledLoginPage = styled(PageMain)`
       color: ${(props) => props.theme.colors.contrastTwo};
       text-transform: uppercase;
       text-align: center;
-      margin-bottom: 2rem;
       cursor: default;
+      height: 2.5rem;
+      align-content: center;
+
+      .material-icons {
+        vertical-align: bottom;
+      }
     }
 
     label {
@@ -53,7 +58,7 @@ export const StyledLoginPage = styled(PageMain)`
     text-underline-offset: 0.5rem;
     text-decoration-thickness: 0.3rem;
     cursor: pointer;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
 
     &:last-of-type {
       margin-bottom: auto;

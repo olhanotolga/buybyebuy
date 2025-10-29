@@ -53,7 +53,9 @@ const Registration = () => {
       <Header className='registration-header' title='Be a friend!' />
 
       <form className='registration-form' onSubmit={(e) => handleSubmit(e)}>
-        {error && <p className='failure-message'>{error}</p>}
+        <output className='failure-message'>
+          { error && <><span className='material-icons'>error</span>{' '}{error}</>}
+          </output>
 
         <label htmlFor='usernameRegist'>Username</label>
         <input

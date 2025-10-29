@@ -66,7 +66,9 @@ const Login = () => {
       <p onClick={() => fillGuestUserData()}>Use boss account</p>
 
       <form onSubmit={(e) => handleSubmit(e)}>
-        {error && <p className='failure-message'>{error}</p>}
+        <output className='failure-message'>
+          { error && <><span className='material-icons'>error</span>{' '}{error}</>}
+        </output>
 
         <label htmlFor='usernameLogin'>Username</label>
         <input
