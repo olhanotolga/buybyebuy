@@ -20,7 +20,7 @@ const ProductCard = ({ idx, title, info, price, image }) => {
       {userData?.username !== '' && (
         <div className='product-card-add-remove'>
           <span
-            className='material-icons'
+            className='material-symbols-outlined'
             onClick={() =>
               addNewItem(userData, cart, setCart, idx, title, price)
             }
@@ -28,7 +28,7 @@ const ProductCard = ({ idx, title, info, price, image }) => {
             add_circle_outline
           </span>
           <span
-            className='material-icons'
+            className='material-symbols-outlined'
             onClick={() => removeItem(userData, cart, setCart, idx)}
           >
             remove_circle_outline

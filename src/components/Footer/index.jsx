@@ -36,7 +36,7 @@ const Footer = ({ className }) => {
       <span>
         {userData.username ? address + userData.username : 'not logged in'}
       </span>
-        <button onClick={userData.username !== '' ? logOut : logIn} className='material-icons logout-login-icon'>
+        <button onClick={userData.username !== '' ? logOut : logIn} className='material-symbols-outlined logout-login-icon'>
         {userData.username !== '' ? 'logout' : 'login'}
       </button>
     </StyledFooter>

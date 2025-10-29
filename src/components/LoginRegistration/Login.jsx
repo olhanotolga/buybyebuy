@@ -10,8 +10,10 @@ import { Button } from '../../styles/globalStyles';
 const Login = () => {
   const { users, userData, dispatch: dispatchUser } = useUserContext();
   const [currentUser, setCurrentUser] = useState(() => {
-    return userData.username && userData.password
-      ? userData
+    return userData.username
+      ? {username: userData.username,
+        password: users[userData.username]
+      }
       : initialUserState.userData;
   });
   const [error, dispatchError] = useReducer(loginErrorReducer, '');
@@ -64,7 +66,9 @@ const Login = () => {
       <p onClick={() => fillGuestUserData()}>Use boss account</p>
 
       <form onSubmit={(e) => handleSubmit(e)}>
-        {error && <p className='failure-message'>{error}</p>}
+        <output className='failure-message'>
+          { error && <><span className='material-symbols-outlined'>error</span>{' '}{error}</>}
+        </output>
 
         <label htmlFor='usernameLogin'>Username</label>
         <input

@@ -10,6 +10,25 @@ export const StyledProductsPage = styled(PageMain)`
     background-color: ${(props) => props.theme.colors.dark};
   }
 
+  aside {
+    position: absolute;
+    bottom: -1.5rem;
+
+    p {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--contrast-three);
+      border: 0.3rem solid var(--contrast-two);
+      padding: 0.2rem 0.5rem;
+      color: var(--dark);
+
+      .material-symbols-outlined {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
   .products-display {
     display: grid;
     grid-template: repeat(auto-fit, 22rem) / repeat(auto-fit, 22rem);

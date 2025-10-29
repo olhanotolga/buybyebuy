@@ -18,7 +18,7 @@ const Header = ({className, title, subtitle, icon, children}) => {
 
 			{subtitle && <h2>{subtitle}</h2>}
 			
-			{icon && <span className="material-icons">
+			{icon && <span className="material-symbols-outlined">
 					{icon}
 			</span>}
 
