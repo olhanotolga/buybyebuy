@@ -1,30 +1,27 @@
 import { useEffect } from 'react';
 import StyledHeader from './styles';
-import {useProductsContext} from '../../context/ProductsContext';
+import { useCartContext } from '../../context/CartContext';
 
-const Header = ({className, title, subtitle, icon, children}) => {
+const Header = ({ className, title, subtitle, icon, children }) => {
+  const { setQty, cart } = useCartContext();
 
-	const {setQty, cart} = useProductsContext();
+  useEffect(() => {
+    setQty(
+      cart && Object.values(cart).reduce((acc, item) => acc + item.qty, 0)
+    );
+  }, [cart, setQty]);
 
-	useEffect(() => {
-		setQty(
-			cart && Object.values(cart).reduce((acc, item) => acc + item.qty, 0)
-		)
-	}, [cart, setQty])
+  return (
+    <StyledHeader className={`page-header ${className}`}>
+      <h1>{title}</h1>
 
-	return (
-		<StyledHeader className={`page-header ${className}`}>
-			<h1>{title}</h1>
+      {subtitle && <h2>{subtitle}</h2>}
 
-			{subtitle && <h2>{subtitle}</h2>}
-			
-			{icon && <span className="material-symbols-outlined">
-					{icon}
-			</span>}
+      {icon && <span className='material-symbols-outlined'>{icon}</span>}
 
-			{children && children}
-		</StyledHeader>
-	)
-}
+      {children && children}
+    </StyledHeader>
+  );
+};
 
 export default Header;

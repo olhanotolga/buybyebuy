@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import Header from '../Header';
 import Footer from '../Footer';
 import PrivateRoute from '../PrivateRoute';
-import { useProductsContext } from '../../context/ProductsContext';
+import { useCartContext } from '../../context/CartContext';
 import { StyledCheckout } from './styles';
 import { StyledCheckoutItem } from './CartItem';
 import { StyledCheckoutSummaryItem } from './SummaryItem';
@@ -16,7 +16,7 @@ const Checkout = () => {
 
 const CheckoutComponent = () => {
   const { cart, subtotal, shipping, total, setTotal } =
-    useProductsContext();
+    useCartContext();
   const navigate = useNavigate();
 
   useEffect(() => {

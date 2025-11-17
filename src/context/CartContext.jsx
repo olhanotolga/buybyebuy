@@ -1,19 +1,13 @@
 import { createContext, useContext, useState } from 'react';
-import data from '../data/products.json';
 
-const ProductsContext = createContext(null);
+const CartContext = createContext(null);
 
-export function useProductsContext() {
-  return useContext(ProductsContext);
+export function useCartContext() {
+  return useContext(CartContext);
 }
 
-function ProductsProvider({ children }) {
-  const [products, setProducts] = useState(() => {
-    return data.products;
-  });
-
+function CartProvider({ children }) {
   // shopping cart
-
   const [cart, setCart] = useState({});
   const [qty, setQty] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
@@ -31,10 +25,8 @@ function ProductsProvider({ children }) {
   };
 
   return (
-    <ProductsContext
+    <CartContext
       value={{
-        products,
-        setProducts,
         cart,
         setCart,
         qty,
@@ -49,8 +41,8 @@ function ProductsProvider({ children }) {
       }}
     >
       {children}
-    </ProductsContext>
+    </CartContext>
   );
 }
 
-export default ProductsProvider;
+export default CartProvider;

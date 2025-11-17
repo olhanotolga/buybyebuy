@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useUserContext } from '../../context/UserContext';
-import { useProductsContext } from '../../context/ProductsContext';
+import { useCartContext } from '../../context/CartContext';
 import StyledFooter from './styles';
 import { displayGreeting } from '../../helpers/greet';
 
 const Footer = ({ className }) => {
   const navigate = useNavigate();
   const { userData, resetUser } = useUserContext();
-  const { resetCart } = useProductsContext();
+  const { resetCart } = useCartContext();
 
   const [address, setAddress] = useState('');
 

@@ -6,7 +6,7 @@ import PrivateRoute from '../PrivateRoute';
 import { StyledCart } from './styles';
 import { StyledCartItem } from './CartItem';
 import { StyledCartSummaryItem } from './SummaryItem';
-import { useProductsContext } from '../../context/ProductsContext';
+import { useCartContext } from '../../context/CartContext';
 import { Button } from '../../styles/globalStyles';
 
 const Cart = () => {
@@ -15,7 +15,7 @@ const Cart = () => {
 
 const CartComponent = () => {
   const { cart, setSubtotal, subtotal, setQty, setShipping } =
-    useProductsContext();
+    useCartContext();
   const navigate = useNavigate();
 
   useEffect(() => {

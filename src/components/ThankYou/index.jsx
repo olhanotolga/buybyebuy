@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from '../../styles/globalStyles';
 import { useUserContext } from '../../context/UserContext';
-import { useProductsContext } from '../../context/ProductsContext';
+import { useCartContext } from '../../context/CartContext';
 import Header from '../Header';
 import ReplayIcon from './ReplayIcon';
 import StyledTY from './styles';
 
 const ThankYou = () => {
   const { resetUser } = useUserContext();
-  const { resetCart } = useProductsContext();
+  const { resetCart } = useCartContext();
   const navigate = useNavigate();
 
   useEffect(() => {

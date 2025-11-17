@@ -1,5 +1,5 @@
 import { useUserContext } from '../../context/UserContext';
-import { useProductsContext } from '../../context/ProductsContext';
+import { useCartContext } from '../../context/CartContext';
 import {StylesForCartItem, StylesForCheckoutItem} from './styles';
 import { displayPrice } from '../../helpers/sanitizeData';
 import { addNewItem, removeItem } from '../../helpers/cartHelpers';
@@ -7,7 +7,7 @@ import { addNewItem, removeItem } from '../../helpers/cartHelpers';
 
 const CartItem = ({title, amount, price, addRemove, idx}) => {
 	const { userData } = useUserContext();
-	const { cart, setCart } = useProductsContext();
+	const { cart, setCart } = useCartContext();
 
 	return (
 		<>

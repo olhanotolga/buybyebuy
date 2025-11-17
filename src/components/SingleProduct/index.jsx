@@ -3,19 +3,19 @@ import Header from '../Header';
 import Footer from '../Footer';
 import { Link, useNavigate } from 'react-router';
 import { useUserContext } from '../../context/UserContext';
-import { useProductsContext } from '../../context/ProductsContext';
+import { useCartContext } from '../../context/CartContext';
 import StyledProductPage from './styles';
 import { Button } from '../../styles/globalStyles';
 import { displayPrice } from '../../helpers/sanitizeData';
 import { addNewItem } from '../../helpers/cartHelpers';
 import NotFound from '../NotFound';
 
-const ProductDetails = () => {
+const ProductDetails = ({ products }) => {
   const params = useParams();
   const navigate = useNavigate();
 
   const { userData } = useUserContext();
-  const { products, qty, cart, setCart } = useProductsContext();
+  const { qty, cart, setCart } = useCartContext();
 
   if (products.length === 0) return null;
 
