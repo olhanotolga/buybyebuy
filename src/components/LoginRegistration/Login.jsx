@@ -11,10 +11,8 @@ const Login = () => {
   const { users, userData, dispatch: dispatchUser } = useUserContext();
   const [currentUser, setCurrentUser] = useState(() => {
     return userData.username
-      ? {username: userData.username,
-        password: users[userData.username]
-      }
-      : initialUserState.userData;
+      ? { username: userData.username, password: users[userData.username] }
+      : { username: '', password: '' };
   });
   const [error, dispatchError] = useReducer(loginErrorReducer, '');
   const focusField = useRef();
@@ -67,7 +65,11 @@ const Login = () => {
 
       <form onSubmit={(e) => handleSubmit(e)}>
         <output className='failure-message'>
-          { error && <><span className='material-symbols-outlined'>error</span>{' '}{error}</>}
+          {error && (
+            <>
+              <span className='material-symbols-outlined'>error</span> {error}
+            </>
+          )}
         </output>
 
         <label htmlFor='usernameLogin'>Username</label>
