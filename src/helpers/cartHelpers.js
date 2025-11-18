@@ -1,25 +1,21 @@
-export const addNewItem = (userObj, cartObj, cartSetter, itemIndex, itemTitle, itemPrice) => {
-	if (userObj.username === '') return;
-
-	if (cartObj[itemIndex]) {
-		const newItem = {title: itemTitle, qty: cartObj[itemIndex].qty + 1, price: itemPrice};
-		cartSetter(prev => ({...prev,
-			[itemIndex]: newItem}));
-	} else {
-		const newItem = {title: itemTitle, qty: 1, price: itemPrice};
-		cartSetter(prev => ({...prev,
-			[itemIndex]: newItem}));
-	}
+export function calculateSubtotal(items) {
+  return items.reduce((acc, cur) => acc + cur.price * cur.qty, 0);
 }
-export const removeItem = (userObj, cartObj, cartSetter, index) => {
-	if (userObj.username === '') return;
-	
-	if (cartObj[index] && cartObj[index].qty > 1) {
-		const update = {...cartObj[index], qty: cartObj[index].qty - 1}
-		cartSetter(prev => ({...prev, [index]: update}))
-	} else if (cartObj[index] && cartObj[index].qty === 1) {
-		const newCart = {...cartObj};
-		delete newCart[index];
-		cartSetter(newCart)
-	}
+
+export function calculateQuantity(items) {
+  return items.reduce((acc, cur) => acc + cur.qty, 0);
+}
+
+export function calculateShipping(subtotal) {
+  switch (true) {
+      case subtotal === 0: {
+        return 0;
+      }
+      case subtotal >= 50: {
+        return 0;
+      }
+      default: {
+        return 20;
+      }
+    }
 }

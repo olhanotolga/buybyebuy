@@ -92,7 +92,7 @@ export const StyledProductCard = styled.section`
     grid-area: 3 / 2 / 4 / 3;
     justify-self: end;
 
-    & > * {
+    & > *:not(.disabled) {
       cursor: pointer;
       transition: 0.3s;
 
@@ -103,6 +103,9 @@ export const StyledProductCard = styled.section`
       &:active {
         transform: scale3d(1.15, 1.15, 1.15);
       }
+    }
+    & > *.disabled {
+      color: ${(props) => props.theme.colors.darkgrey};
     }
   }
 `;

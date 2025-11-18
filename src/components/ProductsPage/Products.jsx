@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router';
 import { useUserContext } from '../../context/UserContext';
 import { useCartContext } from '../../context/CartContext';
@@ -5,10 +6,15 @@ import ProductCard from './ProductCard';
 import Header from '../Header';
 import Footer from '../Footer';
 import { StyledProductsPage } from './styles';
+import { calculateQuantity } from '../../helpers/cartHelpers';
 
 const Products = ({ products }) => {
   const { userData } = useUserContext();
-  const { qty } = useCartContext();
+  const { cart } = useCartContext();
+
+  const quantity = useMemo(() => {
+    return calculateQuantity(cart);
+  }, [cart]);
 
   return (
     <StyledProductsPage className='products-page'>
@@ -19,7 +25,7 @@ const Products = ({ products }) => {
               pathname: '/cart',
             }}
           >
-            {qty}
+            {quantity}
           </Link>
         )}
         <aside aria-live='polite'>

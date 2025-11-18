@@ -1,13 +1,18 @@
+import { memo, useMemo } from 'react';
 import { NavLink } from 'react-router';
 import { useUserContext } from '../../context/UserContext';
 import { useCartContext } from '../../context/CartContext';
 import { StyledProductCard } from './styles';
 import { displayPrice } from '../../helpers/sanitizeData';
-import { addNewItem, removeItem } from '../../helpers/cartHelpers';
+import { CART_ACTION_TYPES } from '../../reducers/cartReducer';
 
 const ProductCard = ({ idx, title, info, price, image }) => {
   const { userData } = useUserContext();
-  const { cart, setCart } = useCartContext();
+  const { cart, dispatchCart } = useCartContext();
+
+  const isInCart = useMemo(() => {
+    return Boolean(cart.find((item) => item.id === idx));
+  }, [cart]);
 
   return (
     <StyledProductCard className='product-card'>
@@ -22,21 +27,41 @@ const ProductCard = ({ idx, title, info, price, image }) => {
           <span
             className='material-symbols-outlined'
             onClick={() =>
-              addNewItem(userData, cart, setCart, idx, title, price)
+              isInCart
+                ? dispatchCart({
+                    type: CART_ACTION_TYPES.ITEM_INCREMENTED,
+                    payload: idx,
+                  })
+                : dispatchCart({
+                    type: CART_ACTION_TYPES.ITEM_ADDED,
+                    payload: {
+                      id: idx,
+                      title,
+                      qty: 1,
+                      price,
+                    },
+                  })
             }
           >
             add_circle_outline
           </span>
-          <span
-            className='material-symbols-outlined'
-            onClick={() => removeItem(userData, cart, setCart, idx)}
-          >
-            remove_circle_outline
-          </span>
+          
+            <span
+              className={isInCart ? 'material-symbols-outlined' : 'disabled material-symbols-outlined'}
+              onClick={() => isInCart &&
+                dispatchCart({
+                  type: CART_ACTION_TYPES.ITEM_DECREMENTED,
+                  payload: idx,
+                })
+              }
+            >
+              remove_circle_outline
+            </span>
+          
         </div>
       )}
     </StyledProductCard>
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);

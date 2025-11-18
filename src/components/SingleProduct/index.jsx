@@ -1,13 +1,13 @@
-import { useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import Header from '../Header';
 import Footer from '../Footer';
-import { Link, useNavigate } from 'react-router';
 import { useUserContext } from '../../context/UserContext';
 import { useCartContext } from '../../context/CartContext';
 import StyledProductPage from './styles';
 import { Button } from '../../styles/globalStyles';
 import { displayPrice } from '../../helpers/sanitizeData';
-import { addNewItem } from '../../helpers/cartHelpers';
+import { calculateQuantity } from '../../helpers/cartHelpers';
+import { CART_ACTION_TYPES } from '../../reducers/cartReducer';
 import NotFound from '../NotFound';
 
 const ProductDetails = ({ products }) => {
@@ -15,9 +15,13 @@ const ProductDetails = ({ products }) => {
   const navigate = useNavigate();
 
   const { userData } = useUserContext();
-  const { qty, cart, setCart } = useCartContext();
+  const { cart, dispatchCart } = useCartContext();
+
+  const quantity = calculateQuantity(cart);
 
   if (products.length === 0) return null;
+
+  // The product is defined either by URL params or by the item clicked on the Products page:
 
   const displayedProduct = products.find((product) => {
     return product.title === params.product;
@@ -28,8 +32,6 @@ const ProductDetails = ({ products }) => {
   if (!displayedProduct) {
     return <NotFound />;
   }
-
-  // The product is defined either by URL params or by the item clicked on the Products page:
 
   const { title, description, image, price, id } = displayedProduct;
 
@@ -42,7 +44,7 @@ const ProductDetails = ({ products }) => {
               pathname: '/cart',
             }}
           >
-            {qty}
+            {quantity}
           </Link>
         )}
       </Header>
@@ -59,7 +61,20 @@ const ProductDetails = ({ products }) => {
             <Button
               className='buy'
               onClick={() =>
-                addNewItem(userData, cart, setCart, id, title, price)
+                cart.find((item) => item.id === id)
+                  ? dispatchCart({
+                      type: CART_ACTION_TYPES.ITEM_INCREMENTED,
+                      payload: id,
+                    })
+                  : dispatchCart({
+                      type: CART_ACTION_TYPES.ITEM_ADDED,
+                      payload: {
+                        id,
+                        title,
+                        qty: 1,
+                        price,
+                      },
+                    })
               }
             >
               <span>Buy</span>

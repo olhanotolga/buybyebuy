@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import Header from '../Header';
 import Footer from '../Footer';
@@ -9,19 +8,20 @@ import { StyledCheckoutItem } from './CartItem';
 import { StyledCheckoutSummaryItem } from './SummaryItem';
 import { Button } from '../../styles/globalStyles';
 import { displayPrice } from '../../helpers/sanitizeData';
+import { calculateSubtotal, calculateShipping } from '../../helpers/cartHelpers';
 
 const Checkout = () => {
   return <PrivateRoute component={CheckoutComponent} redirectTo='/login' />;
 };
 
 const CheckoutComponent = () => {
-  const { cart, subtotal, shipping, total, setTotal } =
-    useCartContext();
+  const { cart } = useCartContext();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setTotal(subtotal + shipping);
-  }, [setTotal, subtotal, shipping]);
+  const subtotal = calculateSubtotal(cart);
+  const shipping = calculateShipping(subtotal);
+  const total = subtotal + shipping;
+  
 
   const payAndExit = () => {
     navigate('/thankyou');
@@ -43,15 +43,15 @@ const CheckoutComponent = () => {
         </div>
         <h3>Your order</h3>
         <ul className='checkout-items'>
-          {cart &&
-            Object.entries(cart).map((item) => {
+          {cart && cart.length > 0 &&
+            (cart).map((item) => {
               return (
                 <StyledCheckoutItem
-                  key={item[0]}
+                  key={item.id}
                   className='item'
-                  title={item[1].title}
-                  amount={item[1].qty}
-                  price={item[1].price}
+                  title={item.title}
+                  amount={item.qty}
+                  price={item.price}
                 />
               );
             })}

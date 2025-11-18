@@ -8,42 +8,18 @@ import { StyledCartItem } from './CartItem';
 import { StyledCartSummaryItem } from './SummaryItem';
 import { useCartContext } from '../../context/CartContext';
 import { Button } from '../../styles/globalStyles';
+import { calculateSubtotal } from '../../helpers/cartHelpers';
 
 const Cart = () => {
   return <PrivateRoute component={CartComponent} redirectTo='/login' />;
 };
 
 const CartComponent = () => {
-  const { cart, setSubtotal, subtotal, setQty, setShipping } =
-    useCartContext();
+  const { cart } = useCartContext();
+
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (cart) {
-      const quant = Object.entries(cart).reduce((acc, item) => {
-        return acc + Number(item[1].qty);
-      }, 0);
-      setQty(quant);
-
-      const subt = Object.entries(cart).reduce((acc, item) => {
-        return acc + Number(item[1].price) * Number(item[1].qty);
-      }, 0);
-      setSubtotal(subt);
-    }
-  }, [cart, setSubtotal, setQty]);
-
-  useEffect(() => {
-    switch (true) {
-      case subtotal === 0:
-        setShipping(0);
-        break;
-      case subtotal >= 50:
-        setShipping(0);
-        break;
-      default:
-        setShipping(20);
-    }
-  }, [subtotal, setShipping]);
+  const subtotal = calculateSubtotal(cart);
 
   return (
     <StyledCart>
@@ -57,16 +33,16 @@ const CartComponent = () => {
           </Link>
         </div>
         <ul>
-          {cart &&
-            Object.entries(cart).map((item) => {
+          {cart && cart.length > 0 &&
+            (cart).map((item) => {
               return (
                 <StyledCartItem
-                  key={item[0]}
+                  key={item.id}
                   className='item'
-                  title={item[1].title}
-                  amount={item[1].qty}
-                  price={item[1].price}
-                  idx={item[0]}
+                  title={item.title}
+                  amount={item.qty}
+                  price={item.price}
+                  idx={item.id}
                   addRemove='true'
                 />
               );

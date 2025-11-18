@@ -1,13 +1,11 @@
-import { useUserContext } from '../../context/UserContext';
 import { useCartContext } from '../../context/CartContext';
-import {StylesForCartItem, StylesForCheckoutItem} from './styles';
+import { StylesForCartItem, StylesForCheckoutItem } from './styles';
 import { displayPrice } from '../../helpers/sanitizeData';
-import { addNewItem, removeItem } from '../../helpers/cartHelpers';
+import { CART_ACTION_TYPES } from '../../reducers/cartReducer';
 
 
 const CartItem = ({title, amount, price, addRemove, idx}) => {
-	const { userData } = useUserContext();
-	const { cart, setCart } = useCartContext();
+	const { dispatchCart } = useCartContext();
 
 	return (
 		<>
@@ -21,7 +19,10 @@ const CartItem = ({title, amount, price, addRemove, idx}) => {
 
 			{addRemove && 
 				<span className="item-add material-symbols-outlined"
-				onClick={() => addNewItem(userData, cart, setCart, idx, title, price)}>add_circle_outline</span>
+				onClick={() => dispatchCart({
+          type: CART_ACTION_TYPES.ITEM_INCREMENTED,
+          payload: idx
+        })}>add_circle_outline</span>
 			}
 
 			<span className='item-amount'>
@@ -31,7 +32,10 @@ const CartItem = ({title, amount, price, addRemove, idx}) => {
 			
 			{addRemove && 
 				<span className="item-remove material-symbols-outlined"
-				onClick={() => removeItem(userData, cart, setCart, idx)}>remove_circle_outline</span>
+				onClick={() => dispatchCart({
+          type: CART_ACTION_TYPES.ITEM_DECREMENTED,
+          payload: idx
+        })}>remove_circle_outline</span>
 			}
 
 			<span className='item-sum'>
