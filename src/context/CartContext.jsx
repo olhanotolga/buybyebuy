@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useReducer } from 'react';
+import { CART_ACTION_TYPES, cartReducer } from '../reducers/cartReducer';
 
 const CartContext = createContext(null);
 
@@ -6,37 +7,33 @@ export function useCartContext() {
   return useContext(CartContext);
 }
 
+function getInitialCartState() {
+  const lsCart = localStorage.getItem('bbb-cart');
+  return lsCart ? JSON.parse(lsCart) : []
+}
+
 function CartProvider({ children }) {
+
   // shopping cart
-  const [cart, setCart] = useState({});
-  const [qty, setQty] = useState(0);
-  const [subtotal, setSubtotal] = useState(0);
-  const [shipping, setShipping] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [cartState, dispatchCart] = useReducer(
+      cartReducer,
+      [],
+      // getInitialCartState
+    );
 
   // FUNCTIONS
 
-  const resetCart = () => {
-    setCart({});
-    setQty(0);
-    setSubtotal(0);
-    setShipping(0);
-    setTotal(0);
+  function resetCart() {
+    dispatchCart({
+      type: CART_ACTION_TYPES.CART_RESET
+    })
   };
 
   return (
     <CartContext
       value={{
-        cart,
-        setCart,
-        qty,
-        setQty,
-        subtotal,
-        setSubtotal,
-        shipping,
-        setShipping,
-        total,
-        setTotal,
+        cart: cartState,
+        dispatchCart,
         resetCart,
       }}
     >
