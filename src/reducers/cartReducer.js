@@ -21,13 +21,12 @@ export function cartReducer(state, action) {
   switch (type) {
     case CART_ACTION_TYPES.ITEM_ADDED: {
       const newItem = payload;
-      console.log('add:', { newItem });
+
       return [...state, newItem];
     }
 
     case CART_ACTION_TYPES.ITEM_INCREMENTED: {
       const itemId = payload;
-      console.log('increment:', { itemId });
 
       return [
         ...state.map((item) => {
@@ -41,15 +40,16 @@ export function cartReducer(state, action) {
 
     case CART_ACTION_TYPES.ITEM_REMOVED: {
       const itemId = payload;
-      console.log('remove:', { itemId });
+
       return [...state.filter((item) => item.id !== itemId)];
     }
 
     case CART_ACTION_TYPES.ITEM_DECREMENTED: {
       const itemId = payload;
-      console.log('decrement:', { itemId });
+
       const itemToDecrement = state.find((item) => item.id === itemId);
       const newQty = itemToDecrement.qty - 1;
+
       if (itemToDecrement) {
         return newQty <= 0
           ? [...state.filter((item) => item.id !== itemId)]
