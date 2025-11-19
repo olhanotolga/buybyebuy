@@ -33,8 +33,9 @@ const CartComponent = () => {
           </Link>
         </div>
         <ul>
-          {cart && cart.length > 0 &&
-            (cart).map((item) => {
+          {cart &&
+            cart.length > 0 &&
+            cart.map((item) => {
               return (
                 <StyledCartItem
                   key={item.id}
@@ -54,7 +55,13 @@ const CartComponent = () => {
             price={subtotal}
           />
         </ul>
-        <Button onClick={() => navigate('/checkout')}>Checkout</Button>
+        {cart.length > 0 ? (
+          <Button onClick={() => navigate('/checkout')}>Checkout</Button>
+        ) : (
+          <Button className='inactive-button' disabled>
+            No items to checkout
+          </Button>
+        )}
       </section>
 
       <Footer />
