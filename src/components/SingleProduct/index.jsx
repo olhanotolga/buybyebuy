@@ -50,7 +50,7 @@ const ProductDetails = ({ products }) => {
       </Header>
 
       <section className='product-page-info'>
-        <img className='product-image' src={image} alt={title} />
+        <img className='product-image' src={image.src} alt={title} />
         <h2 className='product-title'>{title}</h2>
         <span className='price'>{displayPrice(price)}&curren;</span>
         <p className='product-description'>{description}</p>
