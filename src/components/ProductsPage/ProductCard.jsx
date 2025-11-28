@@ -16,7 +16,15 @@ const ProductCard = ({ idx, title, info, price, image }) => {
 
   return (
     <StyledProductCard className='product-card'>
-      <img className='product-card-image' src={image} alt={title} />
+      <img
+        className='product-card-image'
+        alt={title}
+        width='900'
+        height='506'
+        sizes='calc(22rem - 2 * 0.3rem)'
+        srcSet={`${image.sources['436']} 1x, ${image.sources['900']} 2x`}
+        loading='lazy'
+      />
       <h2 className='product-card-title'>{title}</h2>
       <NavLink className='product-card-clickable' to={`${title}`}>
         {info} &amp; more...
@@ -45,19 +53,23 @@ const ProductCard = ({ idx, title, info, price, image }) => {
           >
             add_circle_outline
           </span>
-          
-            <span
-              className={isInCart ? 'material-symbols-outlined' : 'disabled material-symbols-outlined'}
-              onClick={() => isInCart &&
-                dispatchCart({
-                  type: CART_ACTION_TYPES.ITEM_DECREMENTED,
-                  payload: idx,
-                })
-              }
-            >
-              remove_circle_outline
-            </span>
-          
+
+          <span
+            className={
+              isInCart
+                ? 'material-symbols-outlined'
+                : 'disabled material-symbols-outlined'
+            }
+            onClick={() =>
+              isInCart &&
+              dispatchCart({
+                type: CART_ACTION_TYPES.ITEM_DECREMENTED,
+                payload: idx,
+              })
+            }
+          >
+            remove_circle_outline
+          </span>
         </div>
       )}
     </StyledProductCard>

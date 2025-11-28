@@ -50,8 +50,24 @@ const ProductDetails = ({ products }) => {
       </Header>
 
       <section className='product-page-info'>
-        <img className='product-image' src={image} alt={title} />
+        <img
+          className='product-image'
+          alt={title}
+          width='1500'
+          height='844'
+          sizes='
+            (width < 1500px) calc(500px - 4rem),
+            (1500px <= width) calc(800px - 4rem)
+          '
+          srcSet={`${image.sources['436']} 1500w, 
+            ${image.sources['900']} 3600w,`}
+        />
+        <span className='product-image-caption'>
+          Image by <a href={image.author.url}>{image.author.name}</a> via{' '}
+          {image.resource.name}
+        </span>
         <h2 className='product-title'>{title}</h2>
+        <span className='price'>{displayPrice(price)}&curren;</span>
         <p className='product-description'>{description}</p>
         <div className='product-btns'>
           <Button className='back' onClick={() => navigate('/products')}>
@@ -77,8 +93,7 @@ const ProductDetails = ({ products }) => {
                     })
               }
             >
-              <span>Buy</span>
-              <span className='price'>{displayPrice(price)}&curren;</span>
+              Buy
             </Button>
           )}
         </div>
