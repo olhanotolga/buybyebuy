@@ -48,7 +48,7 @@ const Products = ({ products }) => {
                 title={product.title}
                 info={product.info}
                 price={product.price}
-                image={product.image.src}
+                image={product.image}
                 description={product.description}
               />
             );

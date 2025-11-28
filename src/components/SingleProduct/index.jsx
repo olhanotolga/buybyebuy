@@ -50,7 +50,18 @@ const ProductDetails = ({ products }) => {
       </Header>
 
       <section className='product-page-info'>
-        <img className='product-image' src={image.src} alt={title} />
+        <img
+          className='product-image'
+          alt={title}
+          width='1500'
+          height='844'
+          sizes='
+            (width < 1500px) calc(500px - 4rem),
+            (1500px <= width) calc(800px - 4rem)
+          '
+          srcSet={`${image.sources['436']} 1500w, 
+            ${image.sources['900']} 3600w,`}
+        />
         <h2 className='product-title'>{title}</h2>
         <span className='price'>{displayPrice(price)}&curren;</span>
         <p className='product-description'>{description}</p>

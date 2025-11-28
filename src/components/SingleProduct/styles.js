@@ -25,6 +25,7 @@ const StyledProductPage = styled(PageMain)`
 
     .product-image {
       width: calc(100vw - 4rem);
+      height: auto;
       object-fit: cover;
       aspect-ratio: 16 / 9;
     }
