@@ -22,6 +22,7 @@ const StyledProductPage = styled(PageMain)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
     .product-image {
       width: calc(100vw - 4rem);
@@ -33,9 +34,9 @@ const StyledProductPage = styled(PageMain)`
     .product-image-caption {      
       font-size: 0.8rem;
       align-self: flex-start;
-      position: relative;
-      top: -1.2rem;
-      left: 0.2rem;
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
       padding-inline: 0.5rem;
       background-color: hsl(30deg 62.5% 90.59% / 63%);
 
