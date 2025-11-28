@@ -7,7 +7,6 @@
       "description": "Inhale with air! A unique breathable substance that contains oxygen. Extremely easy to maintain: fills in any container. No expiration date.",
       "price": 124.0,
       "image": {
-        "src": "https://images.unsplash.com/photo-1494931216633-3f436bf43829?fit=crop&w=1000&q=80",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/air_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/air_900.jpg",
@@ -30,7 +29,6 @@
       "description": "Everyone loves bubbles aka thin films of liquid enclosing air. Extremely lightweight and unstable. Buy them in dozens!",
       "price": 6.7,
       "image": {
-        "src": "https://images.unsplash.com/photo-1594035519981-62c9cef33ca9?auto=format&fit=crop&w=1000&q=80",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/bubbles_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/bubbles_900.jpg",
@@ -53,7 +51,6 @@
       "description": "Easily dispersible fine particles of solid matter. Contains: grinded volcanic rock, dead skin, mites, pollen, stellar matter.",
       "price": 0.64,
       "image": {
-        "src": "https://images.unsplash.com/photo-1586017198015-5cefee201cbd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/dust_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/dust_900.jpg",
@@ -76,7 +73,6 @@
       "description": "Get yourself a Black Hole to disappear completely! Minimum size and maximum weight. Free shipping: You will be delivered to a Black Hole!",
       "price": 7.8e10,
       "image": {
-        "src": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/black_hole_900.jpg",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/black_hole_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/black_hole_900.jpg",
@@ -99,7 +95,6 @@
       "description": "An ideal pet for you. Come in various shapes, colors, sizes, and opacity levels. Easy maintenance and cost-effectiveness guaranteed!",
       "price": 125.0,
       "image": {
-        "src": "https://images.unsplash.com/photo-1580377968242-daed42865732?fit=crop&w=1000&q=80",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/microbe_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/microbe_900.jpg",
@@ -122,7 +117,6 @@
       "description": "Dangerous toxins or life-saving medicine? Choose your Petri dish of Aspergillus sp. or Penicillium sp.!",
       "price": 850.0,
       "image": {
-        "src": "https://images.unsplash.com/photo-1598144865403-1636bdf959dd?auto=format&fit=crop&w=1000&q=80",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mold_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mold_900.jpg",
@@ -145,7 +139,6 @@
       "description": "Turn your place into a playground, a sandy beach, or a desert. All you need is a little sand!",
       "price": 98.0,
       "image": {
-        "src": "https://images.unsplash.com/photo-1637403952224-ea136d56a0f2?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/sand_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/sand_900.jpg",
@@ -168,7 +161,6 @@
       "description": "Oh yes you can buy it!",
       "price": 5.0e9,
       "image": {
-        "src": "https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/time_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/time_900.jpg",
@@ -191,7 +183,6 @@
       "description": "Especially nostalgic in winter...",
       "price": 1000.0,
       "image": {
-        "src": "https://images.unsplash.com/photo-1533460004989-cef01064af7e?fit=crop&w=1000&q=80",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/grass_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/grass_900.jpg",
@@ -214,7 +205,6 @@
       "description": "Let the mess into your life.",
       "price": 1.99,
       "image": {
-        "src": "https://images.unsplash.com/photo-1612334001654-90ad3288602d?fit=crop&w=1000&q=80",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mess_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mess_900.jpg",
@@ -237,7 +227,6 @@
       "description": "The silent witnesses of our glory and decay.",
       "price": 29.99,
       "image": {
-        "src": "https://images.unsplash.com/photo-1650825735886-50f66baf48df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/rocks_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/rocks_900.jpg",
@@ -260,7 +249,6 @@
       "description": "Most often the successor of fire.",
       "price": 0.99,
       "image": {
-        "src": "https://images.unsplash.com/photo-1518289646039-3e6c87a5aaf6?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "sources": {
           "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/smoke_436.jpg",
           "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/smoke_900.jpg",
