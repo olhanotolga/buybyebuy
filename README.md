@@ -11,6 +11,8 @@ A frontend-only webshop simulation. [Shop away here](https://buybyebuy.vercel.ap
 - Material design icons
 - Canva (design & prototyping)
 - Webpack
+- S3 for image storage
+- ImageMagick CLI for resizing images
 
 This project was migrated from CRA (Create React App) to Webpack.
 
@@ -40,6 +42,8 @@ So I am lazily keeping the JSON file with all the products inside the project fo
 
 2. Move away from the discontinued CRA.
 I decided to go with Webpack because that's what I used in my latest job. Took me some time to set it up because of different requirements, e.g. using an SVG as a mask for images.
+
+3. Store resized images on S3 to avoid cases when they disappear from Unsplash.
 
 ### Old (2021)
 
