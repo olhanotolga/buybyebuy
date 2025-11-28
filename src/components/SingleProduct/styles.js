@@ -14,39 +14,53 @@ const StyledProductPage = styled(PageMain)`
   }
 
   .product-page-info {
-    flex-grow: 1;
+    width: calc(100vw - 2rem);
+    margin: auto;
+    padding: 1rem;
     background-color: ${(props) => props.theme.colors.light};
     color: ${(props) => props.theme.colors.dark};
-    margin: 2rem 1rem;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @media screen and (min-width: 450px) {
-      flex-grow: 0;
-      margin: auto;
+    .product-image {
+      width: calc(100vw - 4rem);
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+
+    @media screen and (min-width: 500px) {
+      max-width: calc(500px - 2rem);
+      .product-image {
+        width: calc(500px - 4rem);
+      }
+    }
+    @media screen and (min-width: 1500px) {
+      max-width: calc(800px - 2rem);
+      .product-image {
+        width: calc(800px - 4rem);
+      }
     }
   }
-  .product-image {
-    width: 100%;
-    height: min(20rem, 70vmin);
-    object-fit: cover;
-  }
+
   .product-title,
   .product-description {
-    padding-top: 2rem;
+    padding-top: 1rem;
+  }
+  .price {
+    margin-inline: auto;
+    padding-top: 0.5rem;
+    color: ${(props) => props.theme.colors.contrastTwo};
   }
 
   .product-btns {
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 1rem;
 
     button {
-      width: 15ch;
+      flex: 0 0 15ch;
       margin: 1rem 0.5rem;
       color: ${(props) => props.theme.colors.light};
     }
@@ -55,12 +69,6 @@ const StyledProductPage = styled(PageMain)`
     }
     .buy {
       background-color: ${(props) => props.theme.colors.contrastTwo};
-      display: flex;
-
-      .price {
-        margin-left: auto;
-        color: ${(props) => props.theme.colors.contrastThree};
-      }
     }
   }
 

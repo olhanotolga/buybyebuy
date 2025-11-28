@@ -52,6 +52,7 @@ const ProductDetails = ({ products }) => {
       <section className='product-page-info'>
         <img className='product-image' src={image} alt={title} />
         <h2 className='product-title'>{title}</h2>
+        <span className='price'>{displayPrice(price)}&curren;</span>
         <p className='product-description'>{description}</p>
         <div className='product-btns'>
           <Button className='back' onClick={() => navigate('/products')}>
@@ -77,8 +78,7 @@ const ProductDetails = ({ products }) => {
                     })
               }
             >
-              <span>Buy</span>
-              <span className='price'>{displayPrice(price)}&curren;</span>
+              Buy
             </Button>
           )}
         </div>
