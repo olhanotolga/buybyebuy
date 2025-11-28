@@ -8,6 +8,11 @@
       "price": 124.0,
       "image": {
         "src": "https://images.unsplash.com/photo-1494931216633-3f436bf43829?fit=crop&w=1000&q=80",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/air_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/air_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/air_1500.jpg"
+        },
         "author": {
           "name": "Matteo Fusco",
           "url": "https://unsplash.com/@matteofusco"
@@ -26,6 +31,11 @@
       "price": 6.7,
       "image": {
         "src": "https://images.unsplash.com/photo-1594035519981-62c9cef33ca9?auto=format&fit=crop&w=1000&q=80",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/bubbles_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/bubbles_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/bubbles_1500.jpg"
+        },
         "author": {
           "name": "Drew Beamer",
           "url": "https://unsplash.com/@dbeamer_jpg"
@@ -44,6 +54,11 @@
       "price": 0.64,
       "image": {
         "src": "https://images.unsplash.com/photo-1586017198015-5cefee201cbd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/dust_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/dust_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/dust_1500.jpg"
+        },
         "author": {
           "name": "Irham Setyaki",
           "url": "https://unsplash.com/@setyaki"
@@ -61,7 +76,12 @@
       "description": "Get yourself a Black Hole to disappear completely! Minimum size and maximum weight. Free shipping: You will be delivered to a Black Hole!",
       "price": 7.8e10,
       "image": {
-        "src": "https://images.unsplash.com/photo-1670884307458-4977f638a933?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "src": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/black_hole_900.jpg",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/black_hole_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/black_hole_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/black_hole_1500.jpg"
+        },
         "author": {
           "name": "BoliviaInteligente",
           "url": "https://unsplash.com/@boliviainteligente"
@@ -80,6 +100,11 @@
       "price": 125.0,
       "image": {
         "src": "https://images.unsplash.com/photo-1580377968242-daed42865732?fit=crop&w=1000&q=80",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/microbe_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/microbe_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/microbe_1500.jpg"
+        },
         "author": {
           "name": "CDC",
           "url": "https://unsplash.com/@cdc"
@@ -98,6 +123,11 @@
       "price": 850.0,
       "image": {
         "src": "https://images.unsplash.com/photo-1598144865403-1636bdf959dd?auto=format&fit=crop&w=1000&q=80",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mold_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mold_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mold_1500.jpg"
+        },
         "author": {
           "name": "Sandy Millar",
           "url": "https://unsplash.com/@sandym10"
@@ -116,6 +146,11 @@
       "price": 98.0,
       "image": {
         "src": "https://images.unsplash.com/photo-1637403952224-ea136d56a0f2?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/sand_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/sand_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/sand_1500.jpg"
+        },
         "author": {
           "name": "Sébastien Jermer",
           "url": "https://unsplash.com/@seb"
@@ -134,6 +169,11 @@
       "price": 5.0e9,
       "image": {
         "src": "https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/time_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/time_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/time_1500.jpg"
+        },
         "author": {
           "name": "Aron Visuals",
           "url": "https://unsplash.com/@aronvisuals"
@@ -152,6 +192,11 @@
       "price": 1000.0,
       "image": {
         "src": "https://images.unsplash.com/photo-1533460004989-cef01064af7e?fit=crop&w=1000&q=80",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/grass_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/grass_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/grass_1500.jpg"
+        },
         "author": {
           "name": "Ochir-Erdene Oyunmedeg",
           "url": "https://unsplash.com/@chiklad"
@@ -170,6 +215,11 @@
       "price": 1.99,
       "image": {
         "src": "https://images.unsplash.com/photo-1612334001654-90ad3288602d?fit=crop&w=1000&q=80",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mess_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mess_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/mess_1500.jpg"
+        },
         "author": {
           "name": "Jr Korpa",
           "url": "https://unsplash.com/@jrkorpa"
@@ -188,6 +238,11 @@
       "price": 29.99,
       "image": {
         "src": "https://images.unsplash.com/photo-1650825735886-50f66baf48df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/rocks_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/rocks_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/rocks_1500.jpg"
+        },
         "author": {
           "name": "Aedrian Salazar",
           "url": "https://unsplash.com/@aedrian"
@@ -206,6 +261,11 @@
       "price": 0.99,
       "image": {
         "src": "https://images.unsplash.com/photo-1518289646039-3e6c87a5aaf6?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "sources": {
+          "436": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/smoke_436.jpg",
+          "900": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/smoke_900.jpg",
+          "1500": "https://buybyebuy-images.s3.eu-north-1.amazonaws.com/smoke_1500.jpg"
+        },
         "author": {
           "name": "Christoph Keil",
           "url": "https://unsplash.com/@t0phu"
