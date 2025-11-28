@@ -62,6 +62,10 @@ const ProductDetails = ({ products }) => {
           srcSet={`${image.sources['436']} 1500w, 
             ${image.sources['900']} 3600w,`}
         />
+        <span className='product-image-caption'>
+          Image by <a href={image.author.url}>{image.author.name}</a> via{' '}
+          {image.resource.name}
+        </span>
         <h2 className='product-title'>{title}</h2>
         <span className='price'>{displayPrice(price)}&curren;</span>
         <p className='product-description'>{description}</p>

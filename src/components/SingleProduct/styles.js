@@ -30,6 +30,20 @@ const StyledProductPage = styled(PageMain)`
       aspect-ratio: 16 / 9;
     }
 
+    .product-image-caption {      
+      font-size: 0.8rem;
+      align-self: flex-start;
+      position: relative;
+      top: -1.2rem;
+      left: 0.2rem;
+      padding-inline: 0.5rem;
+      background-color: hsl(30deg 62.5% 90.59% / 63%);
+
+      a {
+        color: ${(props) => props.theme.colors.dark};
+      }
+    }
+
     @media screen and (min-width: 500px) {
       max-width: calc(500px - 2rem);
       .product-image {
